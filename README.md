@@ -1,17 +1,18 @@
 Huesos
 ======
 
-Generates a clean and ready to use standardized-template for sites in Rails.
+Generates a ready to use standardized-template for sites in Rails.
 
 
 Features
 --------
 
-* An state-of-the-art layout
+* An state-of-the-art layout (Builtin)
+* High Voltage (http://github.com/thoughtbot/high_voltage)
+* Less CSS (http://lesscss.org/)
+* jQuery/jRails (http://github.com/aaronchi/jrails)
 * 1KB CSS Grid (http://www.1kbgrid.com/)
 * Cufón (http://github.com/sorccu/cufon)
-* jQuery/jRails (http://github.com/aaronchi/jrails)
-* High Voltage (http://github.com/thoughtbot/high_voltage)
 
 And many more...
 

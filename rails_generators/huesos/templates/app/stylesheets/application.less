@@ -1,0 +1,39 @@
+/*-------------------------------------------------
+App styles, default theme colors, widgets
+-------------------------------------------------*/
+body {
+	background: #102132 url("/images/body_background.gif") repeat-x 0px 32px;
+	color: #333;
+	font: 15px Helvetica, "Lucida Grande", "Lucida Sans Unicode";
+	line-height: 18px;
+}
+
+@import "_variables_and_mixins";
+@import "_layout";
+
+
+.flash_message {
+	padding: 10px;
+	background: #e3fee0;
+	font: bold 13px "Arial";
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+	p {
+		text-align: center;
+	}
+}
+
+.flash_message.warning { background: #F7F7CC; }
+.flash_message.error { 
+	background: #ffcccc; 
+	border-top-color: #ffe7e7;
+	color: #bc3d3d;
+}
+
+.discreet {
+	color: #6a6a6a;
+	font-size: 13px;
+}
+
+
+@import "_makeup_case";

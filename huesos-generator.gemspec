@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.date    = Date.today.to_s
   
   s.summary = "Generates a basic template for sites in Rails"
-  s.description = "Generates a clean and ready standardized-template for sites in Rails"
+  s.description = "Generates an awesome and ready to use standardized-template for sites in Rails"
   
   s.author   = 'Guillermo Domínguez'
   s.email    = 'me@memiux.com'

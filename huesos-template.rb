@@ -2,21 +2,6 @@
 run "rm public/index.html"
 run "echo > README"
 
-gem "snailmail"
-gem "RedCloth"
-
-gem "hirb"
-gem "faker"
-gem "acts_as_list"
-gem "awesome_nested_set"
-gem "shoulda"
-gem "acts-as-taggable-on"
-gem "app_config"
-gem "formtastic"
-gem "validation_reflection"
-gem "attribute_normalizer"
-
-
 if yes?("Do you want to run gems:install? (y/n)")
   rake('gems:install', :sudo => true)
 end
@@ -24,10 +9,15 @@ end
 # Generate
 generate :controller, "inicio index"
 route "map.root :controller => 'inicio'"
+
 plugin "high_voltage", :git => "git://github.com/idsign/high_voltage.git"
+plugin "more", :git => "git://github.com/idsign/more.git"
+plugin "jrails", :git => "git://github.com/aaronchi/jrails.git"
+
+capify!
+
 generate :huesos
 
-# capify!
 
 
 # Git
