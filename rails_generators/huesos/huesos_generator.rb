@@ -9,6 +9,7 @@ class HuesosGenerator < Rails::Generator::Base
       m.directory 'app/helpers'
       m.directory 'app/stylesheets'
       m.directory 'app/views/layouts'
+      m.directory 'app/views/shared'
       m.directory 'config/locales'
       m.directory 'lib/tasks'
       
@@ -16,11 +17,9 @@ class HuesosGenerator < Rails::Generator::Base
       m.file "app/helpers/layout_helper.rb", "app/helpers/layout_helper.rb"
       
       # Stylesheets
-      m.file "app/stylesheets/_layout.less", "app/stylesheets/_layout.less"
-      m.file "app/stylesheets/_variables_and_mixins.less", "app/stylesheets/_variables_and_mixins.less"
-      m.file "app/stylesheets/application.less", "app/stylesheets/application.less"
-      m.file "app/stylesheets/base.less", "app/stylesheets/base.less"
-      m.file "app/stylesheets/inicio.less", "app/stylesheets/inicio.less"
+      %w( _layout _variables_and_mixins application base inicio ).each do |style|
+        m.file "app/stylesheets/#{style}.less", "app/stylesheets/#{style}.less"
+      end
       
       # Views
       m.template "app/views/layouts/application.html.erb", "app/views/layouts/application.html.erb"
@@ -48,17 +47,10 @@ class HuesosGenerator < Rails::Generator::Base
 
   protected
 
-    # def add_options!(opt)
-    #   opt.separator ''
-    #   opt.separator 'Options:'
-    #   opt.on("--haml", "Generate HAML for view, and SASS for stylesheet.") { |v| options[:haml] = v }
-    # end
-
-    def banner
-      <<-EOS
-Creates generic layout, stylesheet, and helper files.
-
-USAGE: #{$0} #{spec.name} [project_name]
-EOS
-    end
+  # def add_options!(opt)
+  #   opt.separator ''
+  #   opt.separator 'Options:'
+  #   opt.on("--haml", "Generate HAML for view, and SASS for stylesheet.") { |v| options[:haml] = v }
+  # end
+  
 end

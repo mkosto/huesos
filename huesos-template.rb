@@ -14,10 +14,12 @@ plugin "high_voltage", :git => "git://github.com/idsign/high_voltage.git"
 plugin "more", :git => "git://github.com/idsign/more.git"
 plugin "jrails", :git => "git://github.com/aaronchi/jrails.git"
 
+environment 'Hirb.enable', :env => 'development'
+environment 'AppConfig[:google_analytics_account_id] = ""', :env => 'production'
+
 capify!
 
 generate :huesos
-
 
 
 # Git
