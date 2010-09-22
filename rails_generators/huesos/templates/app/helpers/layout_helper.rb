@@ -1,13 +1,5 @@
 module LayoutHelper
-  def title(page_title)
-    content_for(:title) { page_title }
-  end
-
-  def title_and_h1(page_title)
-    title(page_title)
-    content_tag("h1", page_title)
-  end
-
+  
   def include_section_stylesheet
     stylesheet_link_tag controller.controller_name.downcase
   end

@@ -1,15 +1,95 @@
-@import "_variables_and_mixins";
+/*-------------------------------------------------
+								Common Layout
+-------------------------------------------------*/
 
-#footer .copyright {
-	float: left;
+body {
+	background: #f7f7f7 repeat-x 0px 32px;
+	color: #333;
+	font: 15px Helvetica, Arial;
+	line-height: 18px;
 }
 
-#footer .developed_by {
-	float: right;
+#wrapper {
+	clear: both;
+	overflow: hidden;
+	padding-top: 10px;
 }
 
-#footer span {
-	display: block;
-	font-size: 12px;
-	color: #fff;
+#canvas {
+	width: 960px;
+	margin: 0px auto;
+	clear: both;
+	overflow: hidden;
+}
+
+body.grid #canvas {
+		background-image: url("/images/grid.png");
+		background-position: 10px 10px;
+}
+
+#header {
+	position: relative;
+	height: 140px;
+	
+	#logo {
+		float: left;
+		a {
+			display: block;
+			background-repeat: no-repeat;
+			background-position: center center;
+			text-indent: -9999px;
+		}
+	}
+	
+	#header_info {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	
+	#main_nav {
+		margin-top: 60px;
+		text-align: right;
+		ul li {
+			display: inline;
+			list-style: none;
+			margin-left: 20px;
+		}
+	}
+}
+
+/* Menu */
+#menu {
+	ul li {
+		float: left;
+		list-style: none;
+	}
+}
+
+
+/* Content Wrapper */
+#content_wrapper {
+
+	/* Content Header */
+	#content_header {
+	}
+
+	/* Content */
+	#content {
+	}
+
+	/* Content Footer */
+	#content_footer {
+	}
+
+} /* end #content_wrapper */
+
+
+/* Footer */
+#footer {
+	margin-top: 20px;
+
+	#developed_by {
+		text-align: right;
+	}
 }

@@ -1,17 +1,11 @@
-/*-------------------------------------------------
-App styles, default theme colors, widgets
--------------------------------------------------*/
-body {
-	background: #102132 url("/images/body_background.gif") repeat-x 0px 32px;
-	color: #333;
-	font: 15px Helvetica, "Lucida Grande", "Lucida Sans Unicode";
-	line-height: 18px;
-}
-
-@import "_variables_and_mixins";
+@import "_960_grid";
 @import "_layout";
+@import "_shared";
+@import "_makeup";
 
-
+/*-------------------------------------------------
+							 Application-specific
+-------------------------------------------------*/
 .flash_message {
 	padding: 10px;
 	background: #e3fee0;
@@ -29,11 +23,3 @@ body {
 	border-top-color: #ffe7e7;
 	color: #bc3d3d;
 }
-
-.discreet {
-	color: #6a6a6a;
-	font-size: 13px;
-}
-
-
-@import "_makeup_case";

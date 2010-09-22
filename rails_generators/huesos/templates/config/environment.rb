@@ -17,13 +17,14 @@ Rails::Initializer.run do |config|
   config.gem "RedCloth"
   config.gem "shoulda"
   config.gem "app_config"
+  config.gem "idsign-more", :lib => "more"
+  config.gem "metadata_extractor"
   # config.gem "acts_as_list"
   # config.gem "awesome_nested_set"
   # config.gem "acts-as-taggable-on"
   # config.gem "formtastic"
   # config.gem "validation_reflection"
   # config.gem "attribute_normalizer"
-  # config.gem "faker"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

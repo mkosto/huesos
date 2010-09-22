@@ -1,25 +1,35 @@
+#
 # Huesos template
+#
+
+# Delete dummy files
 run "rm public/index.html"
+run "rm public/images/rails.png"
+run "rm public/favicon.ico"
 run "echo > README"
 
-if yes?("Do you want to run gems:install? (y/n)")
-  rake('gems:install', :sudo => true)
-end
-
-# Generate
+# Generate default controller, download plugins, etc...
 generate :controller, "inicio index"
 route "map.root :controller => 'inicio'"
 
 plugin "high_voltage", :git => "git://github.com/idsign/high_voltage.git"
-plugin "more", :git => "git://github.com/idsign/more.git"
 plugin "jrails", :git => "git://github.com/aaronchi/jrails.git"
-
-environment 'Hirb.enable', :env => 'development'
-environment 'AppConfig[:google_analytics_account_id] = ""', :env => 'production'
+rake 'jrails:js:scrub'
 
 capify!
 
-generate :huesos
+if yes?("Are you sure you want to generate huesos? (y/n)")
+  # Copy huesos template
+  generate :huesos, "--force"
+  
+  if yes?('Do you want to run `sudo rake gems:install`? (y/n)')
+    rake('gems:install', :sudo => true)
+  end
+  
+  environment 'Hirb.enable', :env => 'development'
+  environment 'AppConfig.setup :show_grid => false', :env => 'development'
+  environment 'AppConfig.setup :google_analytics_account_id => ""', :env => ['development', 'production']
+end
 
 
 # Git
@@ -32,6 +42,7 @@ log/*.log
 tmp/**/*
 config/database.yml
 config/deploy.rb
+*.tmproj
 END
 
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"

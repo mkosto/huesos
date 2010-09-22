@@ -8,11 +8,12 @@ Features
 --------
 
 * An state-of-the-art layout (Builtin)
-* High Voltage (http://github.com/thoughtbot/high_voltage)
-* Less CSS (http://lesscss.org/)
-* jQuery/jRails (http://github.com/aaronchi/jrails)
-* 1KB CSS Grid (http://www.1kbgrid.com/)
-* Cufón (http://github.com/sorccu/cufon)
+* Pages can have embedded metadata (in yaml format)
+* [High Voltage](http://github.com/thoughtbot/high_voltage)
+* [Less CSS](http://lesscss.org/)
+* [jQuery/jRails](http://github.com/aaronchi/jrails)
+* [1KB CSS Grid](http://www.1kbgrid.com/)
+* [Cufón](http://github.com/sorccu/cufon)
 
 And many more...
 
