@@ -15,6 +15,7 @@ class HuesosGenerator < Rails::Generator::Base
       m.directory 'config/locales'
       m.directory 'lib/tasks'
 
+      m.directory 'public/fonts'
       m.directory 'public/images'
       m.directory 'public/javascripts'
       m.directory 'public/resources'
