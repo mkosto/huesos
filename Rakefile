@@ -5,5 +5,5 @@ end
 
 desc "Release gem"
 task :release => :build do
-  system "gem push huesos-0.2.gem"
+  system "gem push huesos-0.3.gem"
 end
