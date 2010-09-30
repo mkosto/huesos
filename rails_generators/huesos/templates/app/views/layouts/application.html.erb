@@ -5,7 +5,9 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%%= h(@meta[:title] || "#{controller.controller_name.humanize}: #{controller.action_name}") %> – <%= project_name %></title>
-  <%%= stylesheet_link_tag "base", "application", :cache => true %>
+  <meta name="description" content="<%= @meta[:description] %>" />
+	<meta name="keywords" content="<%= @meta[:keywords] %>" />
+	<%%= stylesheet_link_tag "base", "application", :cache => true %>
 	<%%= include_section_stylesheet %>
 	<!--[if IE 6]><%%= stylesheet_link_tag "hacks/ie6" %><![endif]-->
 	<%%= javascript_include_tag :defaults, "cufon-yui", :cache => true %>

@@ -27,8 +27,6 @@ if yes?("Are you sure you want to generate huesos? (y/n)")
   end
   
   environment 'Hirb.enable', :env => 'development'
-  environment 'AppConfig.setup :show_grid => false', :env => 'development'
-  environment 'AppConfig.setup :google_analytics_account_id => ""', :env => ['development', 'production']
 end
 
 

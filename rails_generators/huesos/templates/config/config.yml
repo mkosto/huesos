@@ -1,6 +1,10 @@
+meta:
+  description: Descripcion por default
+  keywords: default, keywords
+
 development:
   domain: localhost:3000
-
+  
 test:
   domain: test.host
 
