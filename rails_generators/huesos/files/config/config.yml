@@ -1,0 +1,18 @@
+meta:
+  title:
+  navigation:
+  description: Descripcion por default
+  keywords: default, keywords
+
+development:
+  domain: localhost:3000
+  
+test:
+  domain: test.host
+
+production:
+  domain: example.com
+  google_analytics_account_id: ""
+
+dispatcher:
+

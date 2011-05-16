@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'huesos'
-  s.version = '0.3'
+  s.version = '0.4'
   s.date    = Date.today.to_s
   
   s.summary = "Generates a basic template for sites in Rails"
