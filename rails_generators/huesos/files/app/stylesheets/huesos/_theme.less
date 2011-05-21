@@ -54,20 +54,23 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
+body {
+  background: url("/images/body-bg.gif") repeat-x;
+}
+
 #wrapper {
-  background-image: url("/images/huesos/wrapper_bg.gif");
+  background: url("/images/wrapper-bg.jpg") repeat-x top center;  
 }
 
 #header {
-  height: 100px;
-  background: @blue_dark;
+  height: 70px;
   
 	/* Logo */
 	#logo {
-		margin: 10px 0 0 20px;
+    margin: 10px 0 0 20px;
 		a {
-			width: 171px;
-			height: 60px;
+			width: 114px;
+			height: 40px;
 			padding: 4px;
 			background-image: url("/images/huesos/huesos_logo.png");
 		}
@@ -104,7 +107,7 @@ a:hover, a:active {
 
 /* Menu */
 #menu {
-	background: #fff;
+	background: #eee;
 	padding: 10px 0;
 	ul li {
 		margin-right: 10px;
@@ -120,7 +123,7 @@ a:hover, a:active {
 
 		h1 {
 			font-size: 48px;
-			margin-top: 42px;
+			margin-top: 30px;
 			margin-bottom: 28px;
 		}
 		h2 {
@@ -151,7 +154,6 @@ a:hover, a:active {
 	}
 
 	#content {
-	  background-color: #fff;
 	}
 
 	#content_footer {
@@ -161,6 +163,7 @@ a:hover, a:active {
 
 /* Footer */
 #footer {
+  background: #000 url("/images/footer-bg.jpg") repeat-x;
 	color: @ghost_white;
 	padding: 10px 0 10px 0;
 	font-size: 13px;

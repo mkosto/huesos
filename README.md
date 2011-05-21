@@ -23,8 +23,8 @@ Usage
 
 	$ rails <project_name> -m http://github.com/idsign/huesos/raw/master/huesos-template.rb
 
-[Cufón font generator](http://cufon.shoqolate.com/generate/)
-[The League of Moveable Type](http://www.theleagueofmoveabletype.com/)
+[Cufón font generator](http://cufon.shoqolate.com/generate/) |
+[The League of Moveable Type](http://www.theleagueofmoveabletype.com/)| 
 [Font Squirrel](http://www.fontsquirrel.com/)
 
 Copying

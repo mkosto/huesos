@@ -450,26 +450,6 @@ title: Huesos - User interface
 	</ul>
 </div>
 
-<div class="column grid_6">
-	<% frame_tag do %>
-		<h3>Contacto en línea</h3>
-
-		<% if flash[:notice].present? %>
-			<%= render_flash_messages %>
-		<% else %>
-			<% simple_form_for Contacto.new, :url => root_path do |f| %>
-		    <%= f.input :nombre %>
-		    <%= f.input :email, :label => "E-mail" %>
-		    <%= f.input :telefono, :label => "Teléfono", :required => false %>
-				<%= f.input :asunto, :collection => [["Ventas", :ventas], ["Soporte", :soporte]], :include_blank => false, :required => false %>
-		    <%= f.input :comentario, :input_html => {:rows => "10", :cols => "34"} %>
-		    <%= f.button :submit, :label => "Enviar mensaje" %>
-		  <% end %>
-		<% end %>
-
-	<% end %>
-</div>
-
 
 <% content_for :head do %>
 	<style type="text/css" media="screen">
