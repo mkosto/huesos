@@ -15,7 +15,6 @@ capify!
 if should_generate_huesos
   generate :huesos, "--force"
   # rake('gems:install', :sudo => true) if yes?('Do you want to run `sudo rake gems:install`? (y/n)')
-  environment '# Hirb.enable', :env => 'development'
 end
 
 # Git

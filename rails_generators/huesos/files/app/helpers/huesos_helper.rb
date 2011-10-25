@@ -1,5 +1,9 @@
 module HuesosHelper
 
+  def meta(name)
+    @meta[name] rescue nil
+  end
+
   def content_for?(name)
     instance_variable_get("@content_for_#{name}").present?
   end
@@ -7,12 +11,18 @@ module HuesosHelper
 	def time_ago_abbr(date)
 	 content_tag :abbr, distance_of_time_in_words_to_now(date), :title => date.to_s(:alpha)
 	end
-
-	def render_menu_item(id, name, path = nil)
-    current = (@meta[:navigation].present? && @meta[:navigation].to_sym == id) ? ' class="current"' : ''
-  	%{<li class="#{id.to_s}"><a href="#{path || "#"}"#{current}>#{name}</a></li>}
+  
+  def render_menu_item(nav_id_or_path, name, path = nil, options = {})
+    (klasses ||= []) << nav_id_or_path.to_s
+    klasses << "first-child" if options[:first_child]
+    klasses << "current" if current_menu_is?(nav_id_or_path)
+  	%{<li class="#{klasses.join(' ')}"><a href="#{path || "#"}">#{name}</a>#{options[:separator] || ''}</li>}
   end
-
+  
+  def current_menu_is?(nav_id_or_path)
+    @meta[:navigation].present? && @meta[:navigation].to_s.match(/^#{nav_id_or_path}/).present?
+  end
+  
   def render_flash_messages
     return unless messages = flash.keys.select { |k| [:error, :notice, :warning].include? k }
     messages.map do |type|

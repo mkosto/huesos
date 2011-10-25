@@ -1,22 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--[if lt IE 7 ]> <html class="ie6" lang="es"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="es"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="es"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="es"> <!--<![endif]-->
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%%= h(@meta[:title] || "#{controller.controller_name.humanize}: #{controller.action_name} – <%= project_name %>") %></title>
-	<meta name="description" content="<%%= @meta[:description] || APP_CONFIG[:meta]["description"] %>" />
-	<meta name="keywords" content="<%%= @meta[:keywords] || APP_CONFIG[:meta]["keywords"] %>" />
-  
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title><%%= h(@meta[:title] || "#{controller.controller_name.humanize}: #{controller.action_name} – <%= project_name %>") %></title>
+	<meta name="description" content="<%%= @meta[:description] || $Config[:seo]["description"]["default"] %>" />
+	<meta name="keywords" content="<%%= @meta[:keywords] || $Config[:seo]["keywords"]["default"] %>" />
+
 	<meta name="alexaVerifyID" content="" />
 	<meta name="csrf-token" content="<%%= form_authenticity_token %>" />
 	<meta name="csrf-param" content="authenticity_token" />
 
-  <%%= stylesheet_link_tag "application", controller.controller_name.downcase, :cache => true %>
-  <%%= stylesheet_link_tag "/fonts/junction-regular/junction.css" %>
-	
+	<%%= stylesheet_link_tag :all, :cache => true %>
+	<%%= stylesheet_link_tag "/fonts/junction-regular/junction.css" %>
+
 	<%%= javascript_tag %{var RAILS_ENV = "#{RAILS_ENV}"; } %>
-	<%%= javascript_include_tag "jquery", "cufon-yui", "jquery.uniform", "application", :cache => true %>
+	<%%= javascript_include_tag "jquery", "cufon-yui", "application", :cache => true %>
 	<%%= javascript_include_tag Dir.glob('public/fonts/**/*.font.js').map{|f| f.gsub('public','')} %>
 
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -29,53 +32,61 @@
 
 	<%%= yield(:head) %>
 </head>
-<body>
+<body class="<%%= "#{controller_name.downcase} #{params[:id]}".strip %>">
 
-	<!-- div#(canvas_)wrapper: no tiene width, imagen adicional de fondo -->
 	<div id="wrapper">
+		<div id="inner_wrapper">
 
-		<%%= render :partial => 'layouts/top_bar' %>
+			<%%= render :partial => 'layouts/top_bar' %>
 
-		<!-- div#canvas: width: 960px, puede tener un margin-top -->
-			<div id="canvas">
+			<div id="main">
 
 				<div id="header" class="row">
 					<div id="logo" class="column grid_4">
 						<a href="<%%= root_path %>"><%= project_name %></a>
 					</div>
 
-					<div id="header_info"></div>
-
 					<%%= render :partial => 'layouts/main_nav' %>
-
+					<div id="header_info"></div>
 				</div> <!-- /#header -->
-				
+
 				<%%= render :partial => 'layouts/menu' %>
 
-				<div id="content_wrapper" class="row">
-					<div id="content_header" class="column grid_12">
-						<%%= yield :content_header %>
-					</div>
+				<div id="canvas">
+					<div id="content_wrapper" class="row">
 
-					<div id="content">
-						<%%= yield %>
-					</div>
+						<%% if content_for?(:content_header) %>
+							<div id="content_header" class="column grid_12">
+								<%%= yield :content_header %>
+							</div>
+						<%% end %>
 
-					<div id="content_footer">
-						<%%= yield :content_footer %>
-					</div>
-				</div> <!-- /#content_wrapper -->
+						<div id="content">
+							<%%= yield %>
+						</div>
 
-			</div> <!-- /#canvas -->
+						<%% if content_for?(:content_footer) %>
+							<div id="content_footer">
+								<%%= yield :content_footer %>
+							</div>
+						<%% end %>
 
-		<%%= render :partial => "layouts/footer" %>
+					</div> <!-- /#content_wrapper -->
+				</div> <!-- /#canvas -->
 
+				<%% if content_for?(:footer) %>
+					<%%= yield :footer %>
+				<%% end %>
+			</div> <!-- /#main -->
+
+			<%%= render :partial => "layouts/footer" %>
+
+		</div> <!-- /#inner_wrapper -->
 	</div> <!-- /#wrapper -->
 
-
-<%% if APP_CONFIG[RAILS_ENV.to_sym]["google_analytics_account_id"].present? %>
+<%% if $Config[RAILS_ENV.to_sym]["google_analytics_account_id"].present? %>
 	<script type="text/javascript" charset="utf-8">
-	 var _gaq = [['_setAccount', '<%%= APP_CONFIG[RAILS_ENV.to_sym]["google_analytics_account_id"] %>'], ['_trackPageview']];
+	 var _gaq = [['_setAccount', '<%%= $Config[RAILS_ENV.to_sym]["google_analytics_account_id"] %>'], ['_trackPageview']];
 	 (function(d, t) {
 	  var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 	  g.async = true;

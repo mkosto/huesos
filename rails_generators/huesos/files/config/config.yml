@@ -1,8 +1,12 @@
 meta:
   title:
   navigation:
-  description: Descripcion por default
-  keywords: default, keywords
+    
+seo:
+  description:
+    default: 
+  keywords:
+    default: 
 
 development:
   domain: localhost:3000

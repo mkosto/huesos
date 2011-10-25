@@ -5,15 +5,12 @@ set :rails_env, "production"
 
 set :application, "huesos"
 set :domain, "example.com"
-set :user, ""
-set :password, ""
 set :deploy_to, "/var/www/vhosts/#{domain}"
 set :keep_releases, 4
 
 set :scm, :git
 set :repository,  "git@github.com:#{user}/#{application}.git"
 set :branch, "master"
-set :scm_password, ""
 set :use_sudo, false
 set :deploy_via, :remote_cache
 
@@ -38,4 +35,12 @@ after "deploy", "deploy:cleanup", "deploy:delete_cache"
 
 task :show_log, :roles => :app do
   stream "tail -f #{shared_path}/log/#{rails_env}.log"
+end
+
+namespace :rake do
+  desc "Run a task on a remote server."
+  # run like: cap rake:invoke task=a_certain_task
+  task :invoke do
+    run("cd #{current_path} && rake #{ENV['task']} RAILS_ENV=production")
+  end
 end

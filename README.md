@@ -25,7 +25,7 @@ Usage
 
 [Cufón font generator](http://cufon.shoqolate.com/generate/) |
 [The League of Moveable Type](http://www.theleagueofmoveabletype.com/)| 
-[Font Squirrel](http://www.fontsquirrel.com/)
+[Font Squirrel](http://www.fontsquirrel.com/fontface/generator)
 
 Copying
 -------

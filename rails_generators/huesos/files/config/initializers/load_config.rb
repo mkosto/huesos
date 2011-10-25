@@ -1,2 +1,2 @@
-raw_config = File.read(RAILS_ROOT + "/config/config.yml")
-APP_CONFIG = YAML.load(raw_config).symbolize_keys
+$Config = YAML.load_file(RAILS_ROOT + '/config/config.yml').symbolize_keys
+APP_CONFIG = $Config

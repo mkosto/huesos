@@ -1,3 +1,5 @@
+@import "../_shared";
+
 html, body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, 
 form, a, a img, img, dl, dt, dd, address {
 	margin: 0;
@@ -25,5 +27,311 @@ form, a, a img, img, dl, dt, dd, address {
 	margin-bottom: 10px;
 }
 
-label { cursor: pointer; }
-table { border-collapse: collapse; }
+label { 
+  cursor: pointer;
+}
+
+table { 
+  border-collapse: collapse;
+}
+
+/* Huesos "magic" */
+span.amp {
+	font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+	font-size: 110%;
+	font-style: italic;
+	font-weight: normal;
+	text-shadow: 1px 0 1px rgba(0,0,0,0.5);
+}
+
+.highlight {
+	color: @dark_gray;
+}
+
+/* Simple forms */
+form.simple_form {
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 20px;
+	div.string, div.text, div.select {
+		overflow: hidden;
+		clear: both;
+		margin-bottom: 5px;
+		label {
+			display: block;
+			width: 110px;
+			float: left;
+			text-align: right;
+			padding-right: 10px;
+			abbr {
+				border: 0;
+				color: @light_gray;
+			}
+		}
+
+		span.error {
+			overflow: hidden;
+			clear: both;
+			margin-left: 120px;
+			font-size: 12px;
+			color: @red;
+			line-height: 100%;
+			float: left;
+			margin-top: 5px;
+		}
+	}
+
+	div.button {
+		margin: 5px 0 0 120px;
+	}
+}
+
+/* #content & #content_footer */
+.huesos_theme {
+  
+  /* .light_gray in .colors(): can't nest selectors inside a dynamic mixin. */
+  .light_gray { color: @light_gray; }
+	.gray { color: @gray; }
+	.dark_gray { color: @dark_gray; }
+
+	.red { color: @red; }
+	.orange { color: @orange; }
+	.green { color: @green; }
+	.light_blue { color: @light_blue; }
+	.blue { color: @blue; }
+	.dark_blue { color: @dark_blue; }
+  .pink { color: @pink; }
+
+	.bg_light_blue { background-color: @bg_light_blue; }
+	.bg_blue { background-color: @bg_blue; }
+
+	h1, h2, h3, h4, h5, h6 {
+		color: @blue;
+		line-height: 100%;
+		margin-bottom: 20px;
+	}
+
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration: none; }
+
+	h1 { font-size: 30px; }
+	h2 { font-size: 26px; }
+	h3 { font-size: 22px; }
+	h4, dt { font-size: 18px; }
+	h5 { font-size: 16px; }
+	h6 { font-size: 14px; }
+
+	dl {
+		padding-left: 42px;
+	}
+
+	dt {
+		color: @blue;
+	}
+
+	.uppercase {
+		text-transform: uppercase;
+	}
+
+	.x-small {
+		font-size: 12px;
+		line-height: 150%;
+	}
+
+	.small {
+		font-size: 14px;
+		line-height: 150%;
+	}
+
+	.large {
+		font-size: 22px;
+		line-height: 150%;
+	}
+
+	.x-large {
+		font-size: 36px;
+		line-height: 100%;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	.discreet {
+		color: @light_gray;
+	}
+
+	.centered {
+		display: block;
+		padding: 0px 0;
+		text-align: center;
+	}
+
+	.centered table.container {
+		margin: 0 auto 20px auto;
+	}
+
+	hr {
+		display: block;
+		border: none;
+		height: 0;
+		padding: 0;
+		margin-bottom: 20px;
+		border-top: 1px dashed @light_gray;
+		clear: both;
+		overflow: hidden;
+	}
+
+	.frame {
+		border: 1px dashed @border_light_blue;
+		margin-bottom: 20px;
+		padding: 2px;
+
+		.inner {
+			background-color: @bg_light_blue;
+			padding: 20px 20px 0 20px;
+			clear: both;
+			overflow: hidden;
+		}
+	}
+
+	.frame.frame_blue {
+		border: 1px dashed @border_light_blue;
+		.inner {
+			background-color: @bg_blue;
+			color: @ghost_white;
+			a {
+				color: @ghost_white;
+			}
+		}
+	}
+
+	img {
+		margin-bottom: 10px;
+	}
+
+	img.with_margin, .frame img {
+		margin-bottom: 20px;
+	}
+
+	.without_margin {
+		margin-bottom: 0;
+	}
+
+	.half_margin {
+		margin-bottom: 10px;
+	}
+
+	blockquote {
+		background: url("/images/huesos/quotes.png") no-repeat;
+		margin: 0;
+		padding: 10px 0 1px 40px;
+		font-style: italic;
+		line-height: 100%;
+		margin-bottom: 20px;
+		font-family: Rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
+	}
+
+	ul.standard {
+		margin: 0 0 20px 20px;
+	}
+
+	ul.feature_list {
+		padding-top: 1px;
+		li {
+			border-top: 1px dashed @gray;
+			padding-top: 20px;
+		}
+
+	 li:first-child {
+			border-top: none;
+			padding-top: 0;
+		}
+
+		li h6 {
+			margin-bottom: 10px;
+		}
+	}
+
+	ul.with_bullets {
+		list-style: none;
+		margin-bottom: 20px;
+		li {
+			background: url("/images/sprites/accept.png") no-repeat 0px 6px;
+			padding-left: 25px;
+		}
+	}
+
+	table.container {
+		margin-bottom: 20px;
+		td { vertical-align: top; }
+		td.image img {
+			margin-bottom: 0;
+		}
+		td.image + td {
+			vertical-align: middle;
+			padding-left: 20px;
+			h1, h2, h3, h4, h5, h6 {
+				margin-bottom: 0;
+			}
+		}
+		ul {
+			margin-left: 16px;
+		}
+	}
+
+
+	/* Buttons */
+	a.button.green, a.button.blue, a.button.red {
+		color: #fff;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	a.button.green {
+		background-color: @green;
+		:hover { background-color: @green - #111; }
+	}
+
+	a.button.blue {
+		background-color: @blue;
+		:hover { background-color: @blue - #111; }
+	}
+
+	a.button.red {
+		background-color: @red;
+		:hover { background-color: @red - #111; }
+	}
+
+	a.button.gray {
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+		:hover { background-color: #f0f0f0; }
+	}
+
+	a.button {
+		cursor: pointer;
+		overflow: visible;
+		clear: both;
+		padding: 3px 10px 3px 10px;
+		background-image: url("/images/huesos/button_bg.png");
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		background-size: 100% 100%;
+		text-decoration: none;
+		white-space: nowrap;
+		font-weight: bold;
+		margin-bottom: 10px;
+		.rounded_corners(4px);
+		.shadow;
+		-webkit-font-smoothing: subpixel-antialiased !important;
+	}
+
+	a.button.big {
+		border-right: 1px solid #ccc;
+		font-size: 22px;
+	}
+
+	.flash_message p {
+  	text-align: center;
+  }
+
+}

@@ -1,10 +1,9 @@
-	<!-- div#menu: width default 940px -->
+
 	<div id="menu" class="row">
 		<ul class="column grid_12">
-			<li><a href="#">Section 1</a></li>
-			<li><a href="#">Section 2</a></li>
-			<li><a href="#">Section 3</a></li>
-			<li><a href="#">Section 4</a></li>
-			<li><a href="#">Section 5</a></li>
+			<%= render_menu_item :section_1, "Section 1", root_path %>
+			<%= render_menu_item :section_2, "Section 2", root_path %>
+			<%= render_menu_item :section_3, "Section 3", root_path %>
+			<%= render_menu_item :section_4, "Section 4", root_path %>
 		</ul>
 	</div>

@@ -10,7 +10,7 @@ module DispatcherHelper
   end
 
   def build_block_marcas(template, options = {})
-    APP_CONFIG[:dispatcher]['marcas'].collect do |marca|
+    $Config[:dispatcher]['marcas'].collect do |marca|
       if options[:href].present?
         link_to(template.gsub(/\{marca\}/, marca), options[:href].gsub('{marca}', marca))
       else
@@ -21,7 +21,7 @@ module DispatcherHelper
 
   def build_link_marca(template, *args)
     options = args.extract_options!.reverse_merge(:builder => :link_to)
-    next_option(APP_CONFIG[:dispatcher]['marcas'], args.shift) do |marca|      
+    next_option($Config[:dispatcher]['marcas'], args.shift) do |marca|      
       send options[:builder], template.gsub(/\{marca\}/, marca), options[:href].gsub('{marca}', marca)
     end
   end

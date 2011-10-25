@@ -1,8 +1,26 @@
+/* Colors: red, orange, yellow, green, blue, purple, pink, violet */
+@ghost_white: #e2e2e2;
+@light_gray: #aaa;
+@gray: #5F5F5F;
+@dark_gray: #353535;
+
+@red: #B50909;
+@orange: #EE6002;
+@green: #2b7318;
+@light_blue: #454f8c;
+@blue: #252f6c;
+@dark_blue: #172448;
+@pink: #D20077;
+
+@bg_light_blue: #efeeee;
+@bg_blue: @blue;
+@border_light_blue: @gray;
+
 /* Mixins */
 .rounded_corners(@radius: 5px) {
+	border-radius: @radius;
 	-moz-border-radius: @radius;
 	-webkit-border-radius: @radius;
-	border-radius: @radius;
 }
 .rounded_corners_top_left(@radius: 5px) {
 	-moz-border-radius-topleft: @radius;
@@ -21,7 +39,7 @@
 	-webkit-border-bottom-left-radius: @radius;
 }
 .shadow(@blur: 4px) {
+	box-shadow: 0 1px @blur rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 1px @blur rgba(0, 0, 0, 0.3);
 	-webkit-box-shadow: 0 1px @blur rgba(0, 0, 0, 0.3);
-	box-shadow: 0 1px @blur rgba(0, 0, 0, 0.3);
 }
