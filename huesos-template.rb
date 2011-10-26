@@ -9,7 +9,7 @@ run "echo > README"
 
 generate :controller, "inicio index"
 route "map.root :controller => 'inicio'"
-plugin "high_voltage", :git => "git://github.com/idsign/high_voltage.git"
+plugin "high_voltage", :git => "git://github.com/idsign/high_voltage.git -r 0-1-stable"
 capify!
 
 if should_generate_huesos
