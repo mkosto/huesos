@@ -13,11 +13,10 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
   
   # Specify gems that this application depends on and have them installed with rake gems:install
-  config.gem "metadata_extractor"
+  config.gem "metadata_extractor", :version => ">= 0.4"
   config.gem "idsign-more", :lib => "more"
-  config.gem "coderay"
-  config.gem "RedCloth"
   config.gem "simple_form", :version => "1.0.4"
+  # config.gem "RedCloth"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

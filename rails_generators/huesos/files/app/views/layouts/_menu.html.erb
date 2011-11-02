@@ -1,9 +1,10 @@
-
-	<div id="menu" class="row">
-		<ul class="column grid_12">
-			<%= render_menu_item :section_1, "Section 1", root_path %>
-			<%= render_menu_item :section_2, "Section 2", root_path %>
+<div id="menu" class="section">
+	<div class="container clearfix">
+		<ul>
+			<%= render_menu_item :inicio, "Inicio", root_path, :first_child => true %>
+			<%= render_menu_item :ui, "User Interface", page_path("ui") %>
 			<%= render_menu_item :section_3, "Section 3", root_path %>
-			<%= render_menu_item :section_4, "Section 4", root_path %>
+			<%= render_menu_item :section_4, "Section 4", root_path, :last_child => true %>
 		</ul>
 	</div>
+</div>

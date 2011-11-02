@@ -1,92 +1,66 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<!--[if lt IE 7 ]> <html class="ie6" lang="es"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7" lang="es"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8" lang="es"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="es"> <!--<![endif]-->
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="es"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="es"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="es"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="es" xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<title><%%= h(@meta[:title] || "#{controller.controller_name.humanize}: #{controller.action_name} – <%= project_name %>") %></title>
-	<meta name="description" content="<%%= @meta[:description] || $Config[:seo]["description"]["default"] %>" />
-	<meta name="keywords" content="<%%= @meta[:keywords] || $Config[:seo]["keywords"]["default"] %>" />
+	<title><%%= h(@meta["title"] || "#{controller.controller_name.humanize}: #{controller.action_name} – <%= project_name %>") %></title>
+	<meta name="description" content="<%%= @meta["description"] || $Config["seo"]["description"]["default"] %>" />
+	<meta name="keywords" content="<%%= @meta["keywords"] || $Config["seo"]["keywords"]["default"] %>" />
 
-	<meta name="alexaVerifyID" content="" />
 	<meta name="csrf-token" content="<%%= form_authenticity_token %>" />
 	<meta name="csrf-param" content="authenticity_token" />
 
 	<%%= stylesheet_link_tag :all, :cache => true %>
 	<%%= stylesheet_link_tag "/fonts/junction-regular/junction.css" %>
 
-	<%%= javascript_tag %{var RAILS_ENV = "#{RAILS_ENV}"; } %>
-	<%%= javascript_include_tag "jquery", "cufon-yui", "application", :cache => true %>
+	<%%= javascript_tag %{var RAILS_ENV = "#{RAILS_ENV}"; var curvyCornersVerbose = false; } %>
+	<%%= javascript_include_tag "jquery", "cufon-yui", "jquery.colorbox.min", "jquery.formalize.min", "chosen.jquery.min", "curvycorners", "slides.min.jquery", "application", :cache => true %>
 	<%%= javascript_include_tag Dir.glob('public/fonts/**/*.font.js').map{|f| f.gsub('public','')} %>
 
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
 	<script type="text/javascript" charset="utf-8">
-		Cufon.replace("#main_nav a, h1:not(.regular), h2:not(.regular), h3:not(.regular), h4:not(.regular), h5:not(.regular), h6:not(.regular), dt:not(.regular)", {hover: true});
-		Cufon.replace("#content_header h1", {textShadow: '2px 1px rgba(0,0,0,0.20)', color: '-linear-gradient(0.5=white, #888)'});
-		Cufon.replace("#content_header h2", {textShadow: '2px 1px rgba(0,0,0,0.15)', color: '-linear-gradient(#fff9b7, #d9d49c)'});
+		Cufon.replace("#main_nav a, #menu a, #footer strong, h1:not(.regular), h2:not(.regular), h3:not(.regular), h4:not(.regular), h5:not(.regular), h6:not(.regular), dt:not(.regular)", {hover: true});
+		Cufon.replace("h1.banner", {textShadow: '2px 1px rgba(0,0,0,0.20)', color: '-linear-gradient(0.5=white, #888)'});
+		Cufon.replace("h2.banner", {textShadow: '2px 1px rgba(0,0,0,0.15)', color: '-linear-gradient(#fff9b7, #d9d49c)'});
 	</script>
 
-	<%%= yield(:head) %>
+	<%%= yield :head %>
 </head>
-<body class="<%%= "#{controller_name.downcase} #{params[:id]}".strip %>">
+<body class="<%%= "#{controller_name.downcase} #{controller.action_name} #{params[:id]}".strip %>">
 
-	<div id="wrapper">
-		<div id="inner_wrapper">
+	<div id="header" class="section">
+		<div class="container">
+			<div id="logo">
+				<a href="<%%= root_path %>"><%= project_name %></a>
+			</div>
 
-			<%%= render :partial => 'layouts/top_bar' %>
+			<%%= render :partial => 'layouts/main_nav' %>
+			<%%= render :partial => 'layouts/header_info' %>
+		</div>
+	</div> <!-- /#header -->
 
-			<div id="main">
+	<%%= render :partial => 'layouts/menu' %>
+	
+	<%% if content_for?(:banner) %>
+		<div id="banner" class="section">
+			<div class="container">
+				<%%= yield :banner %>			
+			</div>
+		</div>
+	<%% end %>
 
-				<div id="header" class="row">
-					<div id="logo" class="column grid_4">
-						<a href="<%%= root_path %>"><%= project_name %></a>
-					</div>
+	<%%= yield %>
 
-					<%%= render :partial => 'layouts/main_nav' %>
-					<div id="header_info"></div>
-				</div> <!-- /#header -->
+	<%%= render :partial => "layouts/footer" %>
 
-				<%%= render :partial => 'layouts/menu' %>
-
-				<div id="canvas">
-					<div id="content_wrapper" class="row">
-
-						<%% if content_for?(:content_header) %>
-							<div id="content_header" class="column grid_12">
-								<%%= yield :content_header %>
-							</div>
-						<%% end %>
-
-						<div id="content">
-							<%%= yield %>
-						</div>
-
-						<%% if content_for?(:content_footer) %>
-							<div id="content_footer">
-								<%%= yield :content_footer %>
-							</div>
-						<%% end %>
-
-					</div> <!-- /#content_wrapper -->
-				</div> <!-- /#canvas -->
-
-				<%% if content_for?(:footer) %>
-					<%%= yield :footer %>
-				<%% end %>
-			</div> <!-- /#main -->
-
-			<%%= render :partial => "layouts/footer" %>
-
-		</div> <!-- /#inner_wrapper -->
-	</div> <!-- /#wrapper -->
-
-<%% if $Config[RAILS_ENV.to_sym]["google_analytics_account_id"].present? %>
+<%% if $Config[RAILS_ENV] && $Config[RAILS_ENV]["google_analytics_account_id"].present? %>
 	<script type="text/javascript" charset="utf-8">
-	 var _gaq = [['_setAccount', '<%%= $Config[RAILS_ENV.to_sym]["google_analytics_account_id"] %>'], ['_trackPageview']];
+	 var _gaq = [['_setAccount', '<%%= $Config[RAILS_ENV]["google_analytics_account_id"] %>'], ['_trackPageview']];
 	 (function(d, t) {
 	  var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 	  g.async = true;

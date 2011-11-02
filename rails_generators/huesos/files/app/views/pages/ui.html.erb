@@ -1,509 +1,659 @@
-title: Huesos - User interface
+title: User interface - Huesos
+navigation: ui
 
 
-<% content_for :content_header do %>
-	<h1>H1 Big Title</h1>
-	<h2>H2 Awesome description</h2>
-
-	<ul>
-		<li><small style="font: 12px 'Lucida Grande';">✓</small> Beautiful dummy text <span class="amp">&amp;</span> Features list</li>
-		<li><small style="font: 12px 'Lucida Grande';">✓</small> Another item</li>
-	</ul>
-
-	<%= header_image_tag "http://dummyimage.com/480x300/000/fff.png" %>
-
+<% content_for :banner do %>
+	<%= banner_image_tag "/resources/huesos/ahoy_there_banner.png" %>
+	<%# banner_image_tag "http://dummyimage.com/940x300/060606/fff.png" %>
 <% end %>
 
-<div class="column grid_12">
-	<h1>Título H1</h1>
 
-	<div class="row">
-		<div class="column grid_8">
-			<p>
-				Texto normal. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros, sit amet interdum
-				mi egestas sed. <em>Vestibulum iaculis <strong>purus</strong> (em)</em> nec felis faucibus ultricies. <strong>Nam ut erat lectus</strong>, in pharetra justo. In
-				convallis ipsum non nisi mattis vel sagittis neque interdum. <%= link_to "Donec (link)", "/" %> at neque nunc, ut laoreet massa. Morbi lorem purus,
-				accumsan sed ornare ut, porttitor in lorem. Morbi dui elit, vestibulum nec bibendum at, laoreet lobortis nulla.
+<div id="main" class="section huesos_theme">
+	<div class="container">
+
+		<%= image_tag "/resources/huesos/rudder.png", :size => "250x250", :style => "float: right; margin-right: -90px;" %>
+
+		<div class="grid_20 first">
+			<h1 class="with_line">Título H1</h1>
+
+			<p>Lorem ipsum dolor sit amet. Erat vitae rutrum vehicula, neque felis hendrerit lorem felis faucibus ultricies.
+			<strong>Nam ut erat lectus</strong>, in pharetra justo. Nullam posuere vehicula eros, sit amet interdum mi egestas sed.
+			convallis <span class="highlight">ipsum non nisi mattis vel sagittis neque</span> interdum. Accumsan sed ornare ut
+			<%= link_to "Donec (anchor)", "#table-1" %> at neque nunc, ut laoreet massa. Morbi lorem purus, porttitor in lorem.
+			Morbi dui elit, vestibulum nec bibendum at, laoreet lobortis nulla.
+			</p>
+
+			<p>Phasellus a lorem lacus, sed fringilla lorem. Donec risus arcu, feugiat et sodales a, ultrices at eros. Maecenas non
+			lacus lorem. Phasellus vehicula, <em>Vestibulum iaculis <strong>purus</strong> (em)</em> nec rhoncus nunc felis a
+			lorem. Aenean cursus condimentum urna pulvinar porttitor. Praesent aliquam fringilla. Mauris a orci augue, sit
+			amet facilisis neque. Nunc tellus mi, tincidunt sed ultrices nec, rhoncus vitae erat.</p>
+			<br />
+		</div>
+
+		<!-- Datalist con viñeta a dos columnas -->
+		<div class="grid_24 first">
+			<h2 class="with_line">Título H2</h2>
+
+			<div class="grid_12 first">
+				<dl class="seashell">
+					<dt class="regular">Título regular</dt>
+					<dd>
+						<p class="small">Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
+							sit amet interdum mi egestas sed. Vestibulum iaculis purus nec felis faucibus ultricies. Nam ut erat lectus, in
+							pharetra justo. In convallis ipsum non nisi mattis vel sagittis neque interdum
+						</p>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="grid_12">
+				<dl class="seashell">
+					<dt class="regular">Título regular</dt>
+					<dd>
+						<p class="small">Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
+							sit amet interdum mi egestas sed. Vestibulum iaculis purus nec felis faucibus ultricies. Nam ut erat lectus, in
+							pharetra justo. In convallis ipsum non nisi mattis vel sagittis neque interdum
+						</p>
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+		<hr class="grid_24 first" />
+
+		<!-- BIG -->
+		<div id="big_text" class="grid_24 first centered">
+			<p class="x-large">
+				<strong class="highlight">Texto gigante.</strong> <span class="discreet">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+				Nullam posuere <a href="#">vehicula</a> eros.
 			</p>
 		</div>
 
-		<div class="column grid_4 centered">
-			<%= image_tag "/resources/huesos/flor.png", :size => "290x130" %>
-		</div>
-	</div>
-</div>
+		<hr class="grid_24 first" />
 
-
-<!-- BIG -->
-<hr class="column grid_12" />
-
-<div class="column grid_12 centered">
-	<p class="x-large">
-		<strong class="highlight">Texto gigante.</strong> <span class="discreet">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-		Nullam posuere <a href="#">vehicula</a> eros.
-	</p>
-</div>
-
-<hr class="column grid_12" />
-
-
-<!-- 3 Columnas -->
-<div class="column grid_4">
-	<h4>Título H4</h4>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
-		sit amet interdum mi egestas sed. Vestibulum iaculis purus nec felis faucibus ultricies.
-	</p>
-</div>
-
-<div class="column grid_4">
-	<h4>Título H4</h4>
-	<p class="small">
-		<del>Texto pequeño.</del> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-		ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-		ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-	</p>
-</div>
-
-<div class="column grid_4">
-	<h4>Título H4</h4>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, adipiscing elit. Nullam posuere vehicula eros,
-		sit amet interdum mi egestas sed. Vestibulum purus nec felis faucibus ultricies.
-	</p>
-</div>
-
-<hr class="column grid_12" />
-
-<!-- 3 Columnas con imagen -->
-<div class="column grid_4 centered">
-	<h4>Título H4</h4>
-	<%= image_tag "/resources/huesos/picture.png", :size => "128x128", :class => "with_margin" %>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis faucibus ultricies.
-	</p>
-</div>
-
-<div class="column grid_4 centered">
-	<h4>Título H4</h4>
-	<%= image_tag "/resources/huesos/picture.png", :size => "128x128", :class => "with_margin" %>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis faucibus ultricies.
-	</p>
-</div>
-
-<div class="column grid_4 centered">
-	<h4>Título H4</h4>
-	<%= image_tag "/resources/huesos/picture.png", :size => "128x128", :class => "with_margin" %>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis faucibus ultricies.
-	</p>
-</div>
-
-
-<!-- Small text -->
-<div class="column grid_12">
-	<p class="x-small discreet">
-		x-small, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-		aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco irure dolor in dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-		cupidatat non proident, sunt in culpa
-	</p>
-</div>
-
-<hr class="column grid_12" />
-
-<!-- 4 Columnas con heading regular -->
-<div class="column grid_3">
-	<h6 class="regular uppercase">H6.regular.uppercase</h6>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
-		sit amet interdum mi egestas sed. Vestibulum faucibus ultricies.
-	</p>
-</div>
-
-<div class="column grid_3">
-	<h6 class="regular uppercase">Título Regular</h6>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
-		sit amet interdum mi egestas sed. Vestibulum faucibus ultricies.
-	</p>
-</div>
-
-<div class="column grid_3">
-	<h6 class="regular uppercase">Título Regular</h6>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
-		sit amet interdum mi egestas sed. Vestibulum faucibus ultricies.
-	</p>
-</div>
-
-<div class="column grid_3">
-	<h6 class="regular uppercase">Título Regular</h6>
-	<p class="small">
-		<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
-		sit amet interdum mi egestas sed. Vestibulum faucibus ultricies.
-	</p>
-</div>
-
-<hr class="column grid_12" />
-
-<!-- Parrafo grande con bloque informativo a un lado -->
-<div id="test" class="column grid_6">
-
-	<%= title_tag "H3.regular.uppercase", :class => "regular uppercase", :img => "/resources/huesos/star.png" %>
-
-	<% code_tag do %>
-		<%%= title_tag "Título", :h => "6", :class => "regular uppercase", :img => "/resources/huesos/picture_48.png", :size => "48x48" %>
-	<% end %>
-
-	<p class="large">
-		Texto grande (p.large). Fusce venenatis vehicula mollis. Pellentesque quis lacus sed nunc lacinia volutpat eu at tortor. Sed sodales
-		mattis augue eget eleifend. Pellentesque non magna a mauris pellentesque dictum vel at est. Ut porta commodo erat, eget
-		congue nisi lobortis non. Aenean mauris nibh, sollicitudin in laoreet quis, accumsan et urna.
-	</p>
-
-</div>
-
-<div class="column grid_6">
-	<% frame_tag do %>
-		<h4 class="regular">H4.regular</h4>
-		<p>Texto normal.Lorem ipsum dolor sit amet, consetur adipiscing elit. Nullam posuere vehicula eros, sitet interdum mi egestas sed.</p>
-	<% end %>
-
-	<blockquote>
-		<p>Quote, Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-	</blockquote>
-</div>
-
-<hr class="column grid_12" />
-
-<div class="column grid_12">
-	<% code_tag do %>
-		<hr class="column grid_12" />
-	<% end %>
-</div>
-
-<!-- Container -->
-<div class="column grid_6">
-	<% container_tag :img => "/resources/huesos/picture_48.png", :size => "48x48" do %>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
-		<ul class="standard">
-			<li>Sed do eiusmod tempor incididunt ut labore et dolore</li>
-			<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
-		</ul>
-	<% end %>
-</div>
-
-<div class="column grid_6">
-	<% container_tag :img => "/resources/huesos/picture_48.png", :size => "48x48" do %>
-		<p class="without_margin large">Sunt in culpa mollit anim id est laborum</p>
-	<% end %>
-
-	<% code_tag do %>
-		<%% container_tag :img => "/resources/huesos/picture_48.png", :size => "48x48" do %>
-			<p class="without_margin large">Sunt in culpa mollit anim id est laborum</p>
-		<%% end %>
-	<% end %>
-
-</div>
-
-<hr class="column grid_12" />
-
-<!-- Datalist con viñeta a dos columnas -->
-<div class="column grid_12">
-	<h2>Título H2</h2>
-
-	<div class="row">
-		<div class="column grid_6">
-			<dl class="bullet bookmark">
-				<dt class="regular">Título regular</dt>
-				<dd>
-					<p class="small">Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
-						sit amet interdum mi egestas sed. Vestibulum iaculis purus nec felis faucibus ultricies. Nam ut erat lectus, in
-						pharetra justo. In convallis ipsum non nisi mattis vel sagittis neque interdum
-					</p>
-				</dd>
-			</dl>
+		<!-- 3 Columnas -->
+		<div class="grid_8 first">
+			<h4>Título H4</h4>
+			<p class="small">
+				<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
+				sit amet interdum mi egestas sed. Vestibulum iaculis purus nec felis faucibus ultricies.
+			</p>
 		</div>
 
-		<div class="column grid_6">
-			<dl class="bullet bookmark">
-				<dt class="regular">Título regular</dt>
-				<dd>
-					<p class="small">Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros,
-						sit amet interdum mi egestas sed. Vestibulum iaculis purus nec felis faucibus ultricies. Nam ut erat lectus, in
-						pharetra justo. In convallis ipsum non nisi mattis vel sagittis neque interdum
-					</p>
-				</dd>
-			</dl>
+		<div class="grid_8">
+			<h4>Título H4</h4>
+			<p class="small">
+				<del>Texto pequeño.</del> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+				ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			</p>
 		</div>
-	</div>
 
-</div>
+		<div class="grid_8">
+			<h4>Título H4</h4>
+			<p class="small">
+				<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, adipiscing elit. Nullam posuere vehicula eros,
+				sit amet interdum mi egestas sed. Vestibulum purus nec felis faucibus ultricies.
+			</p>
+		</div>
 
-<hr class="column grid_12" />
+		<hr class="grid_24 first" />
 
-<!-- 4 Imagenes con marco -->
-<div class="column grid_3 centered">
-	<% frame_tag do %>
-		<%= image_tag "/resources/huesos/picture.png", :size => "128x128" %>
-	<% end %>
-</div>
+		<!-- 3 Columnas con imagen -->
+		<div class="grid_8 centered first">
+			<h4>Título H4</h4>
+			<%= image_tag "/resources/huesos/ship.png", :size => "300x232", :class => "with_margin" %>
+			<p class="small">
+				<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis faucibus ultricies.
+			</p>
+		</div>
 
-<div class="column grid_3 centered">
-	<% frame_tag do %>
-		<%= image_tag "/resources/huesos/picture.png", :size => "128x128" %>
-	<% end %>
-</div>
+		<div class="grid_8 centered">
+			<h4>Título H4</h4>
+			<%= image_tag "/resources/huesos/marmaid.png", :size => "300x232", :class => "with_margin" %>
+			<p class="small">
+				<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis faucibus ultricies.
+			</p>
+		</div>
 
-<div class="column grid_3 centered">
-	<% frame_tag :blue do %>
-		<%= image_tag "/resources/huesos/picture.png", :size => "128x128" %>
-	<% end %>
-</div>
+		<div class="grid_8 centered">
+			<h4>Título H4</h4>
+			<%= image_tag "/resources/huesos/anchor.png", :size => "300x232", :class => "with_margin" %>
+			<p class="small">
+				<strong>Texto pequeño.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis faucibus ultricies.
+			</p>
+		</div>
 
-<div class="column grid_3 centered">
-	<% frame_tag do %>
-		<%= image_tag "/resources/huesos/picture.png", :size => "128x128" %>
-	<% end %>
-</div>
+		<!-- Small text -->
+		<div class="grid_24 first">
+			<p class="x-small discreet">
+				x-small, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+				aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco irure dolor in dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+				cupidatat non proident, sunt in culpa
+			</p>
+		</div>
 
-<hr class="column grid_12" />
+		<hr class="grid_24 first" />
 
-<!-- Texto grande -->
-<div class="column grid_12">
-	<% frame_tag :blue do %>
-		<p class="large">
-			<strong>Texto grande.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros.
-		</p>
-	<% end %>
+		<!-- Parrafo grande con bloque informativo a un lado -->
+		<div class="grid_12 first">
+			<%= title_tag "H3.regular.uppercase", :class => "regular uppercase", :img => "/resources/huesos/star.png" %>
 
-	<% code_tag do %>
-		<%% frame_tag :blue do %>
+			<% code_tag do %>
+				<%%= title_tag "Título", :h => "6", :class => "regular uppercase", :img => "/resources/huesos/picture_48.png", :size => "48x48" %>
+			<% end %>
+
 			<p class="large">
-				<strong>Texto grande.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros.
+				Texto grande (p.large). Fusce venenatis vehicula mollis. Pellentesque quis lacus sed nunc lacinia volutpat eu at tortor. Sed sodales
+				mattis augue eget eleifend. Pellentesque non magna a mauris pellentesque dictum vel at est. Ut porta commodo erat, eget
+				congue nisi lobortis non. Aenean mauris nibh, sollicitudin in laoreet quis, accumsan et urna.
 			</p>
-		<%% end %>
-	<% end %>
-
-</div>
-
-<hr class="column grid_12" />
-
-<!-- Lista -->
-<div class="column grid_6">
-	<ul class="feature_list">
-		<li>
-			<h6 class="regular uppercase">Título Regular (h6.regular.uppercase)</h6>
-			<p class="small">
-				Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros, sit amet
-				interdum mi egestas sed.
-			</p>
-		</li>
-
-		<li>
-			<h6 class="regular uppercase">Título Regular</h6>
-			<p class="small">
-				Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros, sit amet
-				interdum mi egestas sed.
-			</p>
-		</li>
-
-		<li>
-			<h6 class="regular uppercase">Título Regular</h6>
-			<p class="small">
-				Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros, sit amet
-				interdum mi egestas sed.
-			</p>
-		</li>
-	</ul>
-</div>
-
-<div class="column grid_6 centered">
-	<%= image_tag "/resources/huesos/picture_256.png", :size => "256x256" %>
-</div>
-
-<hr class="column grid_12" />
-
-
-<!-- Colores y DLs con viñeta -->
-<div id="colors" class="column grid_6">
-
-	<div class="row">
-		<div class="column grid_2">
-			<span class="blue_light">Blue light</span>
-			<span class="blue">Blue</span>
-			<span class="blue_dark">Blue dark</span>
 		</div>
 
-		<div class="column grid_2">
-			<span class="green">Green</span>
-			<span class="red">Red</span>
-			<span class="orange">Orange</span>
-			<span class="pink">Pink</span>
+		<div class="grid_12">
+			<% frame_tag do %>
+				<% container_tag :img => "/resources/huesos/picture.png", :size => "128x128", :class => "with_shadow" do %>
+					<h4 class="regular">H4.regular</h4>
+					<p class="without_margin">Texto normal.Lorem ipsum dolor sit amet, consetur adipiscing elit. Nullam posuere vehicula eros, sitet interdum mi egestas sed.</p>
+				<% end %>
+			<% end %>
+
+			<blockquote>
+				<p>Quote, Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+			</blockquote>
 		</div>
 
-		<div class="column grid_2">
-			<span class="gray_light">Gray light</span>
-			<span class="gray">Gray</span>
-			<span class="gray_dark">Gray dark</span>
+		<hr class="grid_24 first" />
+
+		<div class="grid_24 first">
+			<% code_tag do %>
+				<hr class="grid_24 first" />
+			<% end %>
 		</div>
+
+		<!-- Container -->
+		<div class="grid_12 first">
+			<% container_tag :img => "/resources/huesos/compass.png", :size => "48x48" do %>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+				<ul class="standard">
+					<li>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+					<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
+				</ul>
+			<% end %>
+		</div>
+
+		<div class="grid_12">
+			<% container_tag :img => "/resources/huesos/compass.png", :size => "48x48" do %>
+				<p class="without_margin large">Sunt in culpa mollit anim id est laborum</p>
+			<% end %>
+
+			<% code_tag do %>
+				<%% container_tag :img => "/resources/huesos/compass.png", :size => "48x48" do %>
+					<p class="without_margin large">Sunt in culpa mollit anim id est laborum</p>
+				<%% end %>
+			<% end %>
+		</div>
+
+		<hr class="grid_24 first" />
+
+		<div class="grid_15 first">
+			<div id="VACA" class="slides">
+				<div class="slides_container">
+					<%= link_to image_tag("/resources/huesos/slide-1.jpg", :size => "570x270"), "#" %>
+					<%= link_to image_tag("/resources/huesos/slide-2.jpg", :size => "570x270"), "#" %>
+					<%= link_to image_tag("/resources/huesos/slide-3.jpg", :size => "570x270"), "#" %>
+					<%= link_to image_tag("/resources/huesos/slide-4.jpg", :size => "570x270"), "#" %>
+					<%= link_to image_tag("/resources/huesos/slide-5.jpg", :size => "570x270"), "#" %>
+				</div>
+				<%= link_to image_tag("/images/huesos/slides-arrow-prev.png", :size => "37x37"), "#", :class => "prev" %>
+				<%= link_to image_tag("/images/huesos/slides-arrow-next.png", :size => "37x37"), "#", :class => "next" %>
+			</div>
+		</div>
+
+		<style type="text/css" media="screen">
+			#VACA .slides_container, #VACA .slides_container a {
+				width: 570px;
+				height: 270px;
+			}
+		</style>
+
+		<div class="grid_9 centered">
+			<% frame_tag do %>
+				<%= image_tag "/resources/huesos/picture.png", :size => "98x98" %>
+			<% end %>
+		</div>
+		
+		<div class="grid_9 centered">
+			<% frame_tag :dark do %>
+				<%= image_tag "/resources/huesos/picture_white.png", :size => "98x98" %>
+			<% end %>
+		</div>
+
+		<hr class="grid_24 first" />
+
+		<!-- Texto grande -->
+		<div class="grid_24 first">
+			<% frame_tag :dark do %>
+				<p class="large">
+					<strong>Texto grande.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Nullam posuere vehicula eros.
+				</p>
+			<% end %>
+
+			<% code_tag do %>
+				<%% frame_tag :dark do %>
+					<p class="large">
+						<strong>Texto grande.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Nullam posuere vehicula eros.
+					</p>
+				<%% end %>
+			<% end %>
+		</div>
+
+		<hr class="grid_24 first" />
+
+		<!-- Lista -->
+		<div class="grid_12 first">
+			<ul class="with_lines as_feature_list">
+				<li>
+					<h6 class="regular uppercase">Título Regular (h6.regular.uppercase)</h6>
+					<p class="small">
+						At eleifend euismod lacinia a est. Sed vel nunc nec sem rhoncus pretium. In vitae tortor lectus, nec accumsan ante.
+						adipiscing pretium sed sed arcu. Se
+					</p>
+				</li>
+
+				<li>
+					<h6 class="regular uppercase">Eleifend Urna ipsum eu Enim</h6>
+					<p class="small">
+						Etiam euismod, neque quis pellentesque facilisis, dolor felis lobortis justo, consequat. Mauris vitae enim a augue
+					</p>
+				</li>
+
+				<li>
+					<h6 class="regular uppercase">Ut ac lorem tortor non pharetra nibh</h6>
+					<p class="small">
+						Sunt in culpa qui officia deserunt mollit anim id est laborum, sed auctor ultrices nibh in tempor. Maecenas accumsan
+						tincidunt ultrices. In est neque, fermentum ac eleifend ut, scelerisque ut tortor. Curabitur vitae fringilla magna.
+					</p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="grid_12 centered">
+			<%= link_to image_tag("/resources/huesos/painting.png", :size => "322x217"), "/resources/huesos/picture_512.png", :class => "photo" %>
+			<h5>ColorBox example<img src="/resources/huesos/arrow-up.png" style="margin-top: -78px; margin-left: -80px;" alt="" /></h5>
+		</div>
+
+		<hr class="grid_24 first" />
+
+		<!-- Colores y DLs con viñeta -->
+		<div id="colors" class="grid_4 first">
+				<span class="blue_light">Blue light</span>
+				<span class="blue">Blue</span>
+				<span class="blue_dark">Blue dark</span>
+				<span class="green">Green</span>
+				<span class="red">Red</span>
+				<span class="orange">Orange</span>
+				<span class="pink">Pink</span>
+				<span class="gray_light">Gray light</span>
+				<span class="gray">Gray</span>
+				<span class="gray_dark">Gray dark</span>
+				<br />
+		</div>
+
+		<div class="grid_10">
+			<dl class="seashell">
+				<dt>Excepteur sint occaecat cupidatat</dt>
+				<dd>
+					<p class="small">
+						Aute irure dolor in reprehenderit in voluptate velit esse cillu
+						m dolore eu fugiat nulla pariatur
+					</p>
+				</dd>
+			</dl>
+
+			<dl class="seashell">
+				<dt>Labore et dolore magna aliqua</dt>
+				<dd>
+					<p class="small">
+						Posuere vehicula eros, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</dd>
+			</dl>
+
+			<dl class="seashell">
+				<dt>Ut enim ad minim veniam</dt>
+				<dd>
+					<p class="small">
+						Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis non proident.
+					</p>
+				</dd>
+			</dl>
+		</div>
+
+		<div class="grid_10">
+			<dl class="seashell with_lines">
+				<dt>Excepteur sint occaecat cupidatat</dt>
+				<dd>
+					<p class="small">
+						Aute irure dolor in reprehenderit in voluptate velit esse cillu
+						m dolore eu fugiat nulla pariatur
+					</p>
+				</dd>
+			</dl>
+
+			<dl class="seashell with_lines">
+				<dt>Labore et dolore magna aliqua</dt>
+				<dd>
+					<p class="small">
+						Posuere vehicula eros, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</dd>
+			</dl>
+
+			<dl class="seashell">
+				<dt>Ut enim ad minim veniam</dt>
+				<dd>
+					<p class="small">
+						Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis non proident.
+					</p>
+				</dd>
+			</dl>
+		</div>
+
+		<div class="clear"></div>
+
+		<!-- Titulares y su jerarquía  -->
+		<div class="grid_6 first">
+			<% frame_tag do %>
+				<h1>Título H1</h1>
+				<h2>Título H2</h2>
+				<h3>Título H3</h3>
+				<h4>Título H4</h4>
+				<h5>Título H5</h5>
+				<h6>Título H6</h6>
+			<% end %>
+		</div>
+
+		<div class="grid_8">
+			<% frame_tag do %>
+				<h1 class="regular">Título H1.regular</h1>
+				<h2 class="regular">Título H2.regular</h2>
+				<h3 class="regular gray">Título H3.regular.gray</h3>
+				<h4 class="regular green">Título H4.regular.green</h4>
+				<h5 class="regular">Título H5.regular</h5>
+				<h6 class="regular uppercase">Título H6.regular</h6>
+			<% end %>
+		</div>
+
+		<div class="grid_10">
+			<% frame_tag :dark_gray do %>
+				<h1><%= link_to "Título H1 con link", "/" %></h1>
+				<h2 class="regular"><%= link_to "Título H2.regular con link", "/" %></h2>
+				<h3><%= link_to "Título H3 con link", "/" %></h3>
+				<h4 class="regular"><%= link_to "Título H4.regular con link", "/" %></h4>
+				<h5><%= link_to "Título H5 con link", "/" %></h5>
+				<h6 class="regular"><%= link_to "Título H6.regular con link", "/" %></h6>
+			<% end %>
+		</div>
+
+		<div class="clear"></div>
+
+		<!-- Misc -->
+		<div class="grid_12 first">
+			<ul class="standard">
+				<li><span class="highlight">Lorem ipsum dolor</span> sit amet</li>
+				<li>Consectetur adipisicing elit</li>
+				<li>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+				<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
+			</ul>
+			<br />
+
+			<ul class="standard with_lines">
+				<li><span class="highlight">Lorem ipsum dolor</span> sit amet</li>
+				<li>Consectetur adipisicing elit</li>
+				<li>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+				<li>Ut enim <em>ad minim veniam</em>, quis nostrud exercitation</li>
+			</ul>
+		</div>
+
+		<div class="grid_12">
+			<ul class="with_bullets">
+				<li><span class="highlight">Lorem ipsum dolor</span> sit amet</li>
+				<li class="s16-date"><i>* </i>Consectetur adipisicing elit</li>
+				<li class="s16-telephone"><i>* </i>Sed do eiusmod tempor <strong>incididunt</strong> ut labore et dolore</li>
+				<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
+			</ul>
+			<br />
+
+			<ul class="standard with_bullets with_lines">
+				<li class="s16-add"><i>* </i><span class="highlight">Lorem ipsum dolor</span> sit amet</li>
+				<li class="s16-house"><i>* </i>Consectetur adipisicing elit</li>
+				<li class="s16-clock"><i>* </i>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+				<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
+			</ul>
+		</div>
+
+		<div id="buttons_sample" class="grid_24 first">
+			<%= button_tag "Curabitur feugiat", "#", :class => "red" %>
+			<%= button_tag "Vitae mollis cursus", "#", :class => "orange" %>
+			<%= button_tag "Integer quis nibh", "#", :class => "yellow" %>
+			<%= ver_mas_tag "#" %>
+			<%= mas_informacion_tag "#" %>
+			<%= button_tag "Volutpat tincidunt", "#", :class => "blue" %>
+			<%= button_tag "Ac accumsan nunc", "#", :class => "purple small" %>
+			<%= button_tag "Cras feugiat", "#", :class => "pink" %>
+			<%= button_tag "Nulla eget diam", "#", :class => "black big" %>
+			<button>I'm a button too!</button>
+		</div>
+
+		<hr class="grid_24 first clearfix" />
+		<div id="table-1" class="clear"></div>
+
+		<h3 class="orange">Comparison Table 1</h3>
+
+		<div class="grid_24 first">
+			<table class="comparison" cellspacing="0" cellpadding="0">
+				<tr>
+					<th class="description">
+						<h4 class="regular">Labore et dolore magnat enim ad minim veniam</h4>
+					</th>
+					<th class="green first">
+						<h2 class="regular">Basic</h2>
+						<strong><sub>$</sub>230</strong>
+					</th>
+					<th class="blue">
+						<h2 class="regular">Advanced</h2>
+						<strong><sub>$</sub>450</strong>
+					</th>
+					<th class="black">
+						<h2 class="regular">Full</h2>
+						<strong><sub>$</sub>720</strong>
+					</th>
+				</tr>
+
+				<tr class="odd">
+					<td class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+
+				<tr class="even">
+					<td class="description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+
+				<tr class="odd">
+					<td class="description">ptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, laborum</td>
+					<td>&nbsp;</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+
+				<tr class="even">
+					<td class="description">sunt in culpa qui officia deserunt mollit anim id es</td>
+					<td><strong>500 MB</strong> Storage</td>
+					<td><strong>1000 MB</strong> Storage</td>
+					<td><strong>unlimited</strong> Storage</td>
+				</tr>
+
+				<tr class="odd">
+					<td class="description">labore et dolore magna aliqua.  Duis aute irure dolor in reprehenderit in volu.</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="table-2" class="clear"><br /></div>
+		<h3 class="orange">Comparison Table 2</h3>
+
+		<div class="grid_24 first">
+			<table class="comparison" cellspacing="0" cellpadding="0">
+				<tr>
+					<th class="description black first">
+						<h2 class="regular">Table title</h2>
+					</th>
+					<th class="black">
+						<h2 class="regular">Column A</h2>
+					</th>
+					<th class="black">
+						<h2 class="regular">Column B</h2>
+					</th>
+				</tr>
+
+				<tr class="odd">
+					<td class="description">Lorem ipsum dolor tempor incididunt ut</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+
+				<tr class="even">
+					<td class="description">Ut enim ad minim veniam, aliquip ex ea commodo consequat.</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+
+				<tr class="odd">
+					<td class="description">Ptate velit esse cillum cupidatat non proident, laborum</td>
+					<td>&nbsp;</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+
+				<tr class="even">
+					<td class="description">sunt in culpa qui officia deserunt mollit anim id es</td>
+					<td><strong>500 MB</strong> Storage</td>
+					<td><strong>unlimited</strong> Storage</td>
+				</tr>
+
+				<tr class="odd">
+					<td class="description">labore et dolore magna aliqua.  Duis aute irure dolor in reprehenderit in volu.</td>
+					<td>&nbsp;</td>
+					<td><%= image_tag "/resources/huesos/checkmark.png", :size => "24x24" %></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="clear">&nbsp;</div>
+
 	</div>
 </div>
 
-<div class="column grid_6">
-	<dl class="bullet bookmark">
-		<dt>Título</dt>
-		<dd>
-			<p class="small">
-				Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros.
-			</p>
-		</dd>
-	</dl>
+<div id="grid_sample" class="section huesos_theme with_margin">
+	<div class="container">
+		<h1>The Simpler 940px Grid</h1>
+		<span class="clearfix">24 columns @ 20px each, 20px gutter</span>
 
-	<dl class="bullet bookmark">
-		<dt>Título</dt>
-		<dd>
-			<p class="small">
-				Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros.
-			</p>
-		</dd>
-	</dl>
+		<div class="grid_1 first">1</div>
+		<div class="grid_23">grid_23</div>
 
-	<dl class="bullet bookmark">
-		<dt>Título</dt>
-		<dd>
-			<p class="small">
-				Texto pequeño. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere vehicula eros.
-			</p>
-		</dd>
-	</dl>
+		<div class="grid_2 first">grid_2</div>
+		<div class="grid_22">grid_22</div>
+
+		<div class="grid_3 first">grid_3</div>
+		<div class="grid_21">grid_21</div>
+
+		<div class="grid_4 first">grid_4</div>
+		<div class="grid_20">grid_20</div>
+
+		<div class="grid_5 first">grid_5</div>
+		<div class="grid_19">grid_19</div>
+
+		<div class="grid_12 first">grid_12</div>
+		<div class="grid_12">grid_12</div>
+
+		<div class="grid_6 first">grid_6</div>
+		<div class="grid_6">grid_6</div>
+		<div class="grid_2">grid_2</div>
+		<div class="grid_10">grid_10</div>
+
+		<div class="grid_2 first">grid_2</div>
+		<div class="grid_10">grid_10</div>
+		<div class="grid_6">grid_6</div>
+		<div class="grid_6">grid_6</div>
+
+		<div class="grid_3 first">grid_3</div>
+		<div class="grid_9">
+			grid_9<br />
+			<div class="grid_3 first">3</div>
+			<div class="grid_3">3</div>
+			<div class="grid_3">3</div>
+			<div class="grid_5 first">5</div>
+			<div class="grid_2">2</div>
+			<div class="grid_2">2</div>
+		</div>
+
+		<div class="grid_8">
+			grid_8<br />
+			<div class="grid_3 first">3</div>
+			<div class="grid_3">3</div>
+			<div class="grid_2">2</div>
+			<div class="grid_1 first">1</div>
+			<div class="grid_1">1</div>
+			<div class="grid_6">6</div>
+		</div>
+		<div class="grid_4">grid_4</div>
+
+		<div class="grid_24 first">grid_24</div>
+
+	</div>
 </div>
 
-<div class="clear"></div>
-
-
-<!-- Titulares y su jerarquía  -->
-<div class="column grid_3">
-	<% frame_tag do %>
-		<h1>Título H1</h1>
-		<h2>Título H2</h2>
-		<h3>Título H3</h3>
-		<h4>Título H4</h4>
-		<h5>Título H5</h5>
-		<h6>Título H6</h6>
-	<% end %>
-</div>
-
-<div class="column grid_4">
-	<% frame_tag do %>
-		<h1 class="regular">Título H1.regular</h1>
-		<h2 class="regular">Título H2.regular</h2>
-		<h3 class="regular gray">Título H3.regular.gray</h3>
-		<h4 class="regular green">Título H4.regular.green</h4>
-		<h5 class="regular">Título H5.regular</h5>
-		<h6 class="regular uppercase">Título H6.regular</h6>
-	<% end %>
-</div>
-
-<div class="column grid_5">
-	<% frame_tag :blue do %>
-		<h1><%= link_to "Título H1 con link", "/" %></h1>
-		<h2 class="regular"><%= link_to "Título H2.regular con link", "/" %></h2>
-		<h3><%= link_to "Título H3 con link", "/" %></h3>
-		<h4 class="regular"><%= link_to "Título H4.regular con link", "/" %></h4>
-		<h5><%= link_to "Título H5 con link", "/" %></h5>
-		<h6 class="regular"><%= link_to "Título H6.regular con link", "/" %></h6>
-	<% end %>
-</div>
-
-<div class="clear"></div>
-
-<!-- Misc -->
-<div class="column grid_6">
-	<ul class="standard">
-		<li><span class="highlight">Lorem ipsum dolor</span> sit amet</li>
-		<li>Consectetur adipisicing elit</li>
-		<li>Sed do eiusmod tempor incididunt ut labore et dolore</li>
-		<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
-	</ul>
-	<br />
-
-	<%= ver_mas_tag "#" %>
-	<%= mas_informacion_tag "#" %>
-	<%= button_tag "Button.small.blue", "#", :class => "small blue" %>
-	<%= button_tag "Button.small.red", "#", :class => "small red" %>
-	<%= button_tag "Button.big.gray", "#", :class => "big gray" %>
-
-  <%= button_tag "Generic button", "#" %>
-
-	<div class="clear">&nbsp;</div>
-</div>
-
-<div class="column grid_6">
-	<ul class="with_bullets">
-		<li><span class="highlight">Lorem ipsum dolor</span> sit amet</li>
-		<li>Consectetur adipisicing elit</li>
-		<li>Sed do eiusmod tempor incididunt<br /> ut labore et dolore</li>
-		<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
-	</ul>
-</div>
+<script type="text/javascript" charset="utf-8">
+	$("#buttons_sample a.button").click(function() { return false; });
+</script>
 
 
 <% content_for :head do %>
 	<style type="text/css" media="screen">
-		div.image {
-			opacity: 0.9;
-			-moz-opacity: 0.9;
-			filter:alpha(opacity=90);
+		#main {
+			background-image: url("/images/huesos/a-castle.gif");
+			background-repeat: repeat-x;
+			background-position: bottom center;
 		}
+
+		#big_text { text-shadow: #fff 0 1px 1px; }
+
+		#grid_sample { background: #f1f1f1; }
 
 		#colors span {
 			display: block;
-			padding-left: 10px;
 			font-size: 24px;
 			font-weight: bold;
 		}
-		
-		dl.bookmark {
-			background: url("/resources/huesos/bookmark.png") no-repeat;
-		}
-		
-    /* CodeRay */
-    .CodeRay {
-    	position: relative;
-      background-color: #232323;
-      border: 1px solid black;
-      font-family: 'Courier New', 'Terminal', monospace;
-      color: #E6E0DB;
-      padding: 3px 5px;
+
+    .code {
       overflow: auto;
-      font-size: 12px;
+      background-color: #232323;
+			font: 14px 'Courier New', 'Terminal', monospace;
+      color: #eee;
+      padding: 3px 5px;
       margin-bottom: 20px;
-    	pre {
-        margin: 0px;
-        padding: 0px;
-      	line-height: 130%;
-      }
-      .an { color:#E7BE69 }                      /* html attribute */
-      .c  { color:#BC9358; font-style: italic; } /* comment */
-      .ch { color:#509E4F }                      /* escaped character */
-      .cl { color:#FFF }                         /* class */
-      .co { color:#FFF }                         /* constant */
-      .fl { color:#A4C260 }                      /* float */
-      .fu { color:#FFC56D }                      /* function */
-      .gv { color:#D0CFFE }                      /* global variable */
-      .i  { color:#A4C260 }                      /* integer */
-      .il { background:#151515 }                 /* inline code */
-      .iv { color:#D0CFFE }                      /* instance variable */
-      .pp { color:#E7BE69 }                      /* doctype */
-      .r  { color:#CB7832 }                      /* keyword */
-      .rx { color:#A4C260 }                      /* regex */
-      .s  { color:#A4C260 }                      /* string */
-      .sy { color:#6C9CBD }                      /* symbol */
-      .ta { color:#E7BE69 }                      /* html tag */
-      .pc { color:#6C9CBD }                      /* boolean */
+     	line-height: 130%;
     }
 	</style>
 <% end %>

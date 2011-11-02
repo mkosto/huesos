@@ -1,20 +1,29 @@
 /* Colors: red, orange, yellow, green, blue, purple, pink, violet */
 @ghost_white: #e2e2e2;
-@light_gray: #aaa;
-@gray: #5F5F5F;
-@dark_gray: #353535;
+@gray_light: #aaa;
+@gray: #5f5f5f;
+@gray_dark: #353535;
 
-@red: #B50909;
-@orange: #EE6002;
+@bg_dark: #232323;
+
+@red: #941919;
+@orange: #ff5c00;
+@yellow: #ffb515;
 @green: #2b7318;
-@light_blue: #454f8c;
-@blue: #252f6c;
-@dark_blue: #172448;
-@pink: #D20077;
+@blue: #101f73; @blue_light: #454f8c; @blue_dark: #172448;
+@purple: #792b96;
+@pink: #d20077;
+
+@bg_light_gray: #aaa;
 
 @bg_light_blue: #efeeee;
 @bg_blue: @blue;
-@border_light_blue: @gray;
+@border_light_blue: @blue;
+
+@bg_gray: @gray;
+@border_light_gray: @gray;
+
+@title_border: #941919;
 
 /* Mixins */
 .rounded_corners(@radius: 5px) {
@@ -23,23 +32,27 @@
 	-webkit-border-radius: @radius;
 }
 .rounded_corners_top_left(@radius: 5px) {
+	border-top-left-radius: @radius;
 	-moz-border-radius-topleft: @radius;
 	-webkit-border-top-left-radius: @radius;
 }
 .rounded_corners_top_right(@radius: 5px) {
+  border-top-right-radius: @radius;
 	-moz-border-radius-topright: @radius;
 	-webkit-border-top-right-radius: @radius;
 }
 .rounded_corners_bottom_right(@radius: 5px) {
+  border-bottom-right-radius: @radius;
 	-moz-border-radius-bottomright: @radius;
 	-webkit-border-bottom-right-radius: @radius;
 }
 .rounded_corners_bottom_left(@radius: 5px) {
+  border-bottom-left-radius: @radius;
 	-moz-border-radius-bottomleft: @radius;
 	-webkit-border-bottom-left-radius: @radius;
 }
 .shadow(@blur: 4px) {
-	box-shadow: 0 1px @blur rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 1px @blur rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 0 1px @blur rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px @blur rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 1px @blur rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 1px @blur rgba(0, 0, 0, 0.2);
 }

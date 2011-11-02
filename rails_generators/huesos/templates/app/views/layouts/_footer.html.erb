@@ -1,10 +1,46 @@
-<div id="footer">
-	<div class="row">
-		<div class="column grid_6 copyright">
-			<p>&copy; <%= Date.today.year %> <%= project_name %>, Todos los derechos reservados.</p>
+<div id="footer" class="section">
+	<div class="container">
+		
+		<ul class="grid_4 first">
+			<li><strong>Section 1</strong></li>
+			<li><%%= link_to "Home", root_path %></li>
+			<li><%%= link_to "Link 2", "#" %></li>
+			<li><%%= link_to "Link 3", "#" %></li>
+		</ul>
+		
+		<ul class="grid_4">
+			<li><strong>Section 2</strong></li>
+			<li><%%= link_to "Link 1", "#" %></li>
+			<li><%%= link_to "Link 2", "#" %></li>
+			<li><%%= link_to "Link 3", "#" %></li>
+		</ul>
+		
+		<ul class="grid_4">
+			<li><strong>Section 3</strong></li>
+			<li><%%= link_to "Link 1", "#" %></li>
+			<li><%%= link_to "Link 2", "#" %></li>
+			<li><%%= link_to "Link 3", "#" %></li>
+		</ul>
+		
+		<ul class="grid_4">
+			<li><strong>Section 4</strong></li>
+			<li><%%= link_to "Link 1", "#" %></li>
+			<li><%%= link_to "Link 2", "#" %></li>
+			<li><%%= link_to "Link 3", "#" %></li>
+		</ul>
+		
+		<div class="grid_8 social">
+			<%%= link_to "RSS", "#", :class => "rss" %>
+			<%%= link_to "Vimeo", "http://vimeo.com/", :class => "vimeo" %>
+			<%%= link_to "YouTube", "http://youtube.com/", :class => "youtube" %>
+			<%%= link_to "Facebook", "http://facebook.com/", :class => "facebook" %>
+			<%%= link_to "Twitter", "http://twitter.com/", :class => "twitter" %>
 		</div>
-		<div class="column grid_6 developed_by">
-			<p>Sitio desarrollado por <a href="http://idsign.com.mx/">IDSign</a></p>
-		</div>
+		
+		<p class="copyright clear">
+			&copy; <%%= Date.today.year %> <%= project_name %>. Todos los derechos reservados. |
+			<%%= link_to "Términos y condiciones", "#" %> |
+			<%%= link_to "Aviso de privacidad", "#" %>
+		</p>
 	</div>
 </div>

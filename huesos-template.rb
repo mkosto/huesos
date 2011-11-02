@@ -12,10 +12,7 @@ route "map.root :controller => 'inicio'"
 plugin "high_voltage", :git => "git://github.com/idsign/high_voltage.git"
 capify!
 
-if should_generate_huesos
-  generate :huesos, "--force"
-  # rake('gems:install', :sudo => true) if yes?('Do you want to run `sudo rake gems:install`? (y/n)')
-end
+generate :huesos, "--force" if should_generate_huesos
 
 # Git
 git :init
