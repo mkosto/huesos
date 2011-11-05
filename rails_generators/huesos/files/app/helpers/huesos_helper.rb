@@ -4,12 +4,13 @@ module HuesosHelper
     instance_variable_get("@content_for_#{name}").present?
   end
 
-  def render_menu_item(nav_id_or_path, name, path = nil, options = {})
-    (klasses ||= []) << nav_id_or_path.to_s
-    klasses << "first-child" if options[:first_child]
-    klasses << "last-child" if options[:last_child]
-    klasses << "current" if current_menu_is?(nav_id_or_path)
-  	%{<li class="#{klasses.join(' ')}"><a href="#{path || "#"}">#{name}</a>#{options[:separator] || ''}</li>}
+  def render_menu_item(nav_id_or_path, name, path = nil, options = {}, &block)
+    (c ||= []) << nav_id_or_path.to_s
+    c << "first-child" if options[:first_child]
+    c << "last-child" if options[:last_child]
+    c << "current" if current_menu_is?(nav_id_or_path)
+    item = %{<li class="menu_item #{c.join(' ')}"><a href="#{path || "#"}" class="menu_item">#{name}</a>#{options[:separator] || ''}#{capture(&block) if block_given?}</li>}
+    block_given? ? concat(item) : item
   end
 
   def current_menu_is?(nav_id_or_path)
@@ -37,10 +38,10 @@ module HuesosHelper
 	end
 
   # UI
-  def banner_image_tag(path, *args)
+  def banner_tag(path, url = nil, *args)
     options = args.extract_options!
     content_tag :div, :class => "banner_image" do
-      image_tag path, :alt => options[:alt]
+      link_to(image_tag(path, :alt => options[:alt]), url)
     end
   end
 

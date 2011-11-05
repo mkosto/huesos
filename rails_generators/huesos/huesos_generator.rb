@@ -7,16 +7,15 @@ class HuesosGenerator < Rails::Generator::Base
 
   def manifest
     record do |m|
+      %w( application _footer).each do |file|
+        m.template "app/views/layouts/#{file}.html.erb", "app/views/layouts/#{file}.html.erb"
+      end
       
       Dir.chdir(File.expand_path(File.dirname(__FILE__) + "/files")) do
         Dir.glob("**/").each {|f| m.directory f}
         Dir.glob(File.join("**", "*.*")).each do |f|
           m.file "../files/#{f}", f
         end
-      end
-
-      %w( application _footer).each do |file|
-        m.template "app/views/layouts/#{file}.html.erb", "app/views/layouts/#{file}.html.erb"
       end
 
       m.insert_into "app/controllers/application_controller.rb", "class ApplicationController < ActionController::Base", "  include MetadataExtractor"

@@ -101,22 +101,23 @@ div#container, div.container {
 #menu {
   padding: 4px 0 4px 0;
   margin-bottom: 20px;
-
+  overflow: visible;
+  
 	.container {
-	  overflow: hidden;
+	  overflow: visible;
 	  background: #f4f4f4 url("/images/huesos/menu_bg.gif") repeat-x;
 	  height: 46px;
 	  .rounded_corners(10px);
 	  .shadow();
 	}
-	ul li {
+	ul li.menu_item {
 	  position: relative;
 	  display: inline-block;
 	  float: left;
 		list-style: none;
 		height: 46px;
 		line-height: 48px;
-		a {
+		a.menu_item {
 		  text-decoration: none;
 		  display: inline-block;
 		  height: 46px;
@@ -125,39 +126,60 @@ div#container, div.container {
 		}
 	}
 
-	li::before, li::after, li.last-child a::after {
+	li.menu_item::before, li.menu_item::after, li.menu_item.last-child a.menu_item::after {
 	  position: absolute;
 	  top: 0;
 	  content: "";
 	  height: 46px;
 	  width: 1px;
 	}
-	li::before { left: 0; background: rgba(255,255,255,0.5); }
-	li::after { right: 0; background: rgba(0,0,0,0.2); }
-  li.first-child::before { display: none; }
-	li.last-child a::after { right: -1px; background: rgba(255,255,255,0.5); }
+	li.menu_item::before { left: 0; background: rgba(255,255,255,0.5); }
+	li.menu_item::after { right: 0; background: rgba(0,0,0,0.2); }
+  li.menu_item.first-child::before { display: none; }
+	li.menu_item.last-child a.menu_item::after { right: -1px; background: rgba(255,255,255,0.5); }
 
-	li.first-child a {
+	li.menu_item.first-child a.menu_item {
     background: url("/images/huesos/menu_home.png") no-repeat center center;
     overflow: hidden;
     width: 14px;
     text-indent: -900px;
 	}
 
-	li.first-child, li.first-child a {
+	li.menu_item.first-child, li.menu_item.first-child a.menu_item {
     .rounded_corners_top_left(10px);
     .rounded_corners_bottom_left(10px);
   }
 
-	li:hover, li.current { background: url("/images/huesos/menu_bg.gif") repeat-x 0 -46px; }
-  li:active { background: url("/images/huesos/menu_bg.gif") repeat-x 0 -92px; }
-	li.current a { color: @red; }
+	li.menu_item:hover, li.menu_item.current { background: url("/images/huesos/menu_bg.gif") repeat-x 0 -46px; }
+  li.menu_item:active { background: url("/images/huesos/menu_bg.gif") repeat-x 0 -92px; }
+	li.menu_item.current a.menu_item { color: @red; }
+	
+	li.menu_item div.content {
+	  border-top: 1px solid #ccc;
+	  background: rgba(255, 255, 255, 0.95);
+	  position: absolute;
+	  min-width: 200px;
+	  min-height: 80px;
+	  top: 46px;
+	  left: 0;
+	  z-index: 200;
+	  .rounded_corners_bottom_left();
+	  .rounded_corners_bottom_right();
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2);
+  	-moz-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2);
+  	-webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+	}
+	
+	li.menu_item:hover div.content {
+	  visibility: visible;
+	}
 }
-html.ie #menu a { border-left: 1px solid #fafafa; }
-html.ie #menu li { border-left: 1px solid #dfdfdf; }
-html.ie #menu li.first-child, html.ie #menu li.first-child a { border-left: 0; border-right: 0; }
-html.ie #menu li.last-child { border-right: 1px solid #fafafa; }
-html.ie #menu li.last-child a { border-right: 1px solid #dfdfdf; }
+html.ie #menu a.menu_item { border-left: 1px solid #fafafa; }
+html.ie #menu li.menu_item { border-left: 1px solid #dfdfdf; }
+html.ie #menu li.menu_item.first-child, html.ie #menu li.first-child a { border-left: 0; border-right: 0; }
+html.ie #menu li.menu_item.last-child { border-right: 1px solid #fafafa; }
+html.ie #menu li.menu_item.last-child a.menu_item { border-right: 1px solid #dfdfdf; }
 
 #main {
   background-color: #f9f9f9;

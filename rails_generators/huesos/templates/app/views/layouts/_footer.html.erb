@@ -30,17 +30,20 @@
 		</ul>
 		
 		<div class="grid_8 social">
-			<%%= link_to "RSS", "#", :class => "rss" %>
-			<%%= link_to "Vimeo", "http://vimeo.com/", :class => "vimeo" %>
-			<%%= link_to "YouTube", "http://youtube.com/", :class => "youtube" %>
-			<%%= link_to "Facebook", "http://facebook.com/", :class => "facebook" %>
-			<%%= link_to "Twitter", "http://twitter.com/", :class => "twitter" %>
+			<%%= link_to "RSS", "#", :class => "rss", :target => "_blank" %>
+			<%%= link_to "Vimeo", "http://vimeo.com/", :class => "vimeo", :target => "_blank" %>
+			<%%= link_to "YouTube", "http://youtube.com/", :class => "youtube", :target => "_blank" %>
+			<%%= link_to "Facebook", "http://facebook.com/", :class => "facebook", :target => "_blank" %>
+			<%%= link_to "Twitter", "http://twitter.com/", :class => "twitter", :target => "_blank" %>
 		</div>
 		
 		<p class="copyright clear">
 			&copy; <%%= Date.today.year %> <%= project_name %>. Todos los derechos reservados. |
 			<%%= link_to "Términos y condiciones", "#" %> |
 			<%%= link_to "Aviso de privacidad", "#" %>
+			<%% if Rails.env == 'development'  %>
+				| <%%= link_to "User Interface", page_path("ui") %>
+			<%% end %>
 		</p>
 	</div>
 </div>
