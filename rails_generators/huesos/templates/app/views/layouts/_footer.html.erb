@@ -2,28 +2,28 @@
 	<div class="container">
 		
 		<ul class="grid_4 first">
-			<li><strong>Section 1</strong></li>
+			<li><span>Section 1</span></li>
 			<li><%%= link_to "Home", root_path %></li>
 			<li><%%= link_to "Link 2", "#" %></li>
 			<li><%%= link_to "Link 3", "#" %></li>
 		</ul>
 		
 		<ul class="grid_4">
-			<li><strong>Section 2</strong></li>
+			<li><span>Section 2</span></li>
 			<li><%%= link_to "Link 1", "#" %></li>
 			<li><%%= link_to "Link 2", "#" %></li>
 			<li><%%= link_to "Link 3", "#" %></li>
 		</ul>
 		
 		<ul class="grid_4">
-			<li><strong>Section 3</strong></li>
+			<li><span>Section 3</span></li>
 			<li><%%= link_to "Link 1", "#" %></li>
 			<li><%%= link_to "Link 2", "#" %></li>
 			<li><%%= link_to "Link 3", "#" %></li>
 		</ul>
 		
 		<ul class="grid_4">
-			<li><strong>Section 4</strong></li>
+			<li class="blank"></li>
 			<li><%%= link_to "Link 1", "#" %></li>
 			<li><%%= link_to "Link 2", "#" %></li>
 			<li><%%= link_to "Link 3", "#" %></li>
@@ -38,11 +38,11 @@
 		</div>
 		
 		<p class="copyright clear">
-			&copy; <%%= Date.today.year %> <%= project_name %>. Todos los derechos reservados. |
-			<%%= link_to "Términos y condiciones", "#" %> |
+			&copy; <%%= Date.today.year %> <%= project_name %> Todos los derechos reservados.
+			<%%= link_to "Términos y condiciones", "#" %> ·
 			<%%= link_to "Aviso de privacidad", "#" %>
 			<%% if Rails.env == 'development'  %>
-				| <%%= link_to "User Interface", page_path("ui") %>
+				· <%%= link_to "User Interface", page_path("ui") %>
 			<%% end %>
 		</p>
 	</div>

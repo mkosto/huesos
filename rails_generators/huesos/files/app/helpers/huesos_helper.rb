@@ -76,7 +76,11 @@ module HuesosHelper
 	  html = content_tag :table, :class => "container #{options[:class]}".strip, :cellspacing => "0", :cellpadding => "0" do
 	    content_tag :tr do
         (content_tag :td, :class => "image" do
-          image_tag(options[:img], :size => options[:size]) unless options[:img].blank?
+          case; when options[:img].present?
+            image_tag(options[:img], :size => options[:size])
+          when options[:sprite].present?
+            %{<span class="#{options[:sprite][/^[^-]+/]} #{options[:sprite]}"><i>* </i></span>}
+          end
         end) +
         (content_tag :td do
           capture(&block)

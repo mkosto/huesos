@@ -78,6 +78,7 @@ div#container, div.container {
   			float: left;
     		list-style: none;
     		margin-right: 8px;
+    		color: #fff;
 			  a {
 				  color: #fff;
   				text-decoration: none;
@@ -177,36 +178,50 @@ div#container, div.container {
 }
 html.ie #menu a.menu_item { border-left: 1px solid #fafafa; }
 html.ie #menu li.menu_item { border-left: 1px solid #dfdfdf; }
-html.ie #menu li.menu_item.first-child, html.ie #menu li.first-child a { border-left: 0; border-right: 0; }
+html.ie #menu li.menu_item.first-child, html.ie #menu li.menu_item.first-child a.menu_item { border-left: 0; border-right: 0; }
 html.ie #menu li.menu_item.last-child { border-right: 1px solid #fafafa; }
 html.ie #menu li.menu_item.last-child a.menu_item { border-right: 1px solid #dfdfdf; }
 
-#main {
+#main, .main {
   background-color: #f9f9f9;
   padding-top: 20px;
   padding-bottom: 20px;
+  min-height: 500px;
 }
 
 /* Content header */
 #banner {
+  overflow: visible;
 	position: relative;
-	min-height: 300px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  clear: both;
+  h1 {
+    color: #fff;
+    font-size: 42px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    font-weight: normal;
+  }
 }
 
 
 /* Footer */
 #footer {
   background: #060606 url("/images/huesos/body_bg.gif") no-repeat bottom center;
-	padding: 20px 0 20px 0;
-	font: 13px "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	color: #c0c0c0;
-	border-top: 1px solid rgba(255,255,255, 0.25);
+  padding: 20px 0 10px 0;
+  font-size: 13px;
+  border-top: 1px solid rgba(255,255,255, 0.3);
+
+  -webkit-box-shadow: inset 0 2px 5px #0c0f17;
+  -moz-box-shadow: inset 0 2px 5px #0c0f17;
+  box-shadow: inset 0 2px 5px #0c0f17;
 
   ul { margin-bottom: 20px; }
-  li strong { display: block; font-size: 17px; padding-bottom: 10px; color: #c0c0c0; }
-  li a { font-size: 14px; line-height: 130%;}
-	a { color: #fff; }
+  li span { display: block; font-size: 17px; padding-bottom: 10px; color: #fff; }
+  li.blank { padding-top: 37px; }
+  li a { font-size: 13px; line-height: 130%;}
+	a { color: #d0d0d0; }
+	a:hover { color: #fff; }
 
 	.social a {
 	  display: block;
@@ -222,4 +237,11 @@ html.ie #menu li.menu_item.last-child a.menu_item { border-right: 1px solid #dfd
 	.social a.youtube { background-position: -95px 0; }
 	.social a.vimeo { background-position: -144px 0; }
 	.social a.rss { background-position: -192px 0; }
+	
+	p.copyright {
+	  padding-top: 10px;
+	  font-size: 12px;
+	  color: #d0d0d0;
+	  text-align: center;
+	}
 }

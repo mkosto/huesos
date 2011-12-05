@@ -117,14 +117,20 @@ form.simple_form {
 	.bg_blue { background-color: @bg_blue; }
 
 	.highlight {
-	  background-color: #FFFFCC;
-	  padding: 2px;
+	  background-color: @highlight;
+	  padding: 0 2px;
+	}
+
+	.highlight.dotted {
+	  padding-bottom: 2px;
+	  border-bottom: 1px dotted #cdcdb9;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 	  color: @red;
     line-height: 150%;
 		margin-bottom: 20px;
+		font-weight: normal;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration: none; }
@@ -135,6 +141,31 @@ form.simple_form {
 	h4, dt { font-size: 18px; }
 	h5 { font-size: 16px; }
 	h6 { font-size: 14px; }
+
+	h2.title {
+	  font-weight: normal;
+	  font-size: 36px;
+	  font-style: italic;
+    color: @blue_light;
+	  margin-bottom: 0;
+	  strong {
+      color: #182b65;
+	  }
+	}
+
+	h2.center, h3.center {
+	  text-align: center;
+	}
+
+	h3.title {
+	  font-size: 24px;
+	  font-weight: normal;
+	  font-style: italic;
+    color: #7c7c7c;
+	  .highlight {
+	    color: #626262;
+	  }
+	}
 
   /* Title border */
 	.with_line {
@@ -213,10 +244,9 @@ form.simple_form {
 			clear: both;
 			overflow: hidden;
 			.rounded_corners(5px);
+			.shadow(3px);
 		}
 	}
-
-	.frame:hover .inner { .shadow(); }
 
 	.frame.frame_dark {
 		.inner {
@@ -234,6 +264,10 @@ form.simple_form {
 		margin-bottom: 20px;
 	}
 
+	.top_margin {
+	  margin-top: 20px;
+	}
+
 	.without_margin {
 		margin-bottom: 0;
 	}
@@ -243,17 +277,21 @@ form.simple_form {
 	}
 
 	blockquote {
-		background: url("/resources/huesos/quotes.png") no-repeat;
+	  display: block;
+    background: #ffffe0 url("/images/huesos/sticky_noise_pattern.gif");
 		margin: 0;
-		padding: 10px 0 1px 40px;
+		padding: 20px;
 		font-style: italic;
 		line-height: 100%;
 		margin-bottom: 20px;
-		font-family: Rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
 		text-shadow: #fff 0 1px 1px;
 		font-size: 18px;
+		text-align: right;
+		.rounded_corners();
+		border: 1px solid #e5e4be;
+		p { text-align: left; }
+		small { color: @gray; }
 	}
-
 
 	ul.standard {
 	  list-style: disc;
@@ -261,7 +299,7 @@ form.simple_form {
 	}
 
 
-	ul.with_lines {
+	ul.with_separators {
   	border-bottom: 1px solid #fdfdfd;
   	border-bottom: 1px solid rgba(255,255,255,0.8);
   	li {
@@ -272,17 +310,23 @@ form.simple_form {
   	}
   }
 
-	ul.with_lines li:first-child, ul.with_lines li.first {
+	ul.with_separators li:first-child, ul.with_separators li.first {
 	 border-top: none;
 	}
 
-	dl.with_lines {
+	dl.with_separator {
 	  border-bottom: 1px solid #fdfdfd;
 	  border-bottom: 1px solid rgba(255,255,255,0.8);
-		dd { 
+		dd {
 		  border-bottom: 1px solid #dfdfdf;
 		  border-bottom: 1px solid rgba(0,0,0,0.1);
 		}
+	}
+
+	table.container.with_separator td {
+    background: url("/images/huesos/dotted.png") repeat-x bottom left;
+	  padding-bottom: 10px;
+	  margin-bottom: 10px;
 	}
 
 
@@ -296,7 +340,7 @@ form.simple_form {
   	}
 	}
 
-	ul.with_bullets.with_lines {
+	ul.with_bullets.with_separators {
 	  i { margin-left: 10px; }
 	}
 
@@ -320,6 +364,7 @@ form.simple_form {
 			margin-bottom: 0;
 		}
 		td.image + td {
+		  width: 100%;
 			vertical-align: middle;
 			padding-left: 20px;
 			h1, h2, h3, h4, h5, h6 {
@@ -354,7 +399,7 @@ form.simple_form {
     .rounded_corners(5px);
 		span {
 		  display: block;
-  		padding: 7px 10px 4px 10px;
+  		padding: 5px 10px 6px 10px;
       border: 1px solid rgba(255,255,255, 0.15);
       line-height: 100%;
       color: #fff;
@@ -370,7 +415,7 @@ form.simple_form {
 
 	a.button.big {
 		font-size: 24px;
-		span { padding: 11px 10px 4px 10px; }
+		span { padding: 8px 10px 7px 10px; }
 	}
 
 	a.button.red {
@@ -516,13 +561,14 @@ form.simple_form {
   i {
 	  display: inline-block;
 	  overflow: hidden;
-	  height: 16px;
-	  width: 16px;
-	  background-image: url("/resources/huesos/sprite16_icons.png");
 		background-repeat: no-repeat;
 		text-indent: -900px;
 	}
 
+	.s16 i {
+	  width: 16px; height: 16px;
+	  background-image: url("/resources/huesos/huesos-s16.png");
+	}
   .s16-accept i { background-position: 0 0; }
   .s16-add i { background-position: 0 -36px; }
   .s16-asterisk_orange i { background-position: 0 -72px; }
@@ -558,6 +604,18 @@ form.simple_form {
   .s16-archive i { background-position: 0 -1152px; }
   .s16-cog_add i { background-position: 0 -1189px; }
 
+  .s48 i {
+	  width: 48px; height: 48px;
+	  background-image: url("/resources/compucorner-s48.png");
+	}
+	.s48-warranty i { background-position: 0 0; }
+	.s48-clock i { background-position: 0 -48px; }
+	.s48-heart i { background-position: 0 -96px; }
+	.s48-pig i { background-position: 0 -144px; }
+	.s48-thumb i { background-position: 0 -192px; }
+	.s48-truck i { background-position: 0 -240px; }
+	.s48-padlock i { background-position: 0 -288px; }
+
 } /* end .huesos_theme */
 
 
@@ -567,14 +625,14 @@ form.simple_form {
   float: left;
   clear: both;
   overflow: hidden;
-  
+
   .slides_container {
     position: relative;
     overflow: hidden;
-    
-    a { display: block; }      
+
+    a { display: block; }
   }
-  
+
   .prev, .next {
     display: block;
     position: absolute;
@@ -589,7 +647,7 @@ form.simple_form {
   }
   .prev { left: 10px; }
   .next { right: 10px; }
-  
+
   .prev:hover, .next:hover {
     opacity: 0.95 !important;
     -moz-opacity: 0.95 !important;
@@ -601,25 +659,26 @@ form.simple_form {
     overflow: hidden;
     margin: 6px auto 0;
     text-align: center;
-    line-height: 12px;
+    line-height: 15px;
 
     li {
       overflow: hidden;
       display: inline-block;
       margin: 0 1px;
       list-style: none;
-      height: 12px;
+      height: 15px;
       a {
         float: left;
-        width: 12px;
+        width: 15px;
         height: 0;
-        padding-top: 12px;
+        padding-top: 15px;
         background-image: url("/images/huesos/slides-pagination.png");
         background-position: 0 0;
         background-repeat: no-repeat;
         overflow: hidden;
       }
-    }   
-    li.current a, a:hover { background-position: 0 -12px; }
+    }
+    a:hover { background-position: 0 -15px; }
+    li.current a, li.current a:hover { background-position: 0 -30px; }
   }
 } /* end .slides */
